@@ -1,0 +1,1042 @@
+For the journal, see Machine Learning (journal).
+"Statistical learning" redirects here. For statistical learning in linguistics, see statistical learning in language acquisition.
+Part of a series on
+Machine learning
+and data mining
+Multi-Layer Neural Network-Vector-Blank.svg
+Problems
+Supervised learning
+(classification • regression)
+Clustering
+Dimensionality reduction
+Structured prediction
+Anomaly detection
+Artificial neural network
+Reinforcement learning
+Theory
+Machine-learning venues
+Related articles
+vte
+Part of a series on the
+Evolutionary algorithm
+Artificial developmentArtificial lifeCellular evolutionary algorithmCultural algorithmDifferential evolutionEffective fitnessEvolutionary computationEvolution strategyGaussian adaptationEvolutionary multimodal optimizationGrammatical evolutionParticle swarm optimizationMemetic algorithmNatural evolution strategyNeuroevolutionPromoter based genetic algorithmSpiral optimization algorithmSelf-modifying codePolymorphic code
+Genetic algorithm
+ChromosomeClonal selection algorithmCrossoverMutationGenetic memoryGenetic fuzzy systemsSelectionFly algorithm
+Genetic programming
+Cartesian genetic programmingLinear genetic programmingMulti expression programmingSchemaEuriskoParity benchmark
+vte
+Machine learning (ML) is the study of computer algorithms that improve automatically through experience and by the use of data.[1] It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to do so.[2] Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.[3]
+
+A subset of machine learning is closely related to computational statistics, which focuses on making predictions using computers; but not all machine learning is statistical learning. The study of mathematical optimization delivers methods, theory and application domains to the field of machine learning. Data mining is a related field of study, focusing on exploratory data analysis through unsupervised learning.[5][6] In its application across business problems, machine learning is also referred to as predictive analytics.
+
+
+Contents
+1	Overview
+2	History and relationships to other fields
+2.1	Artificial intelligence
+2.2	Data mining
+2.3	Optimization
+2.4	Generalization
+2.5	Statistics
+3	Theory
+4	Approaches
+4.1	Supervised learning
+4.2	Unsupervised learning
+4.3	Semi-supervised learning
+4.4	Reinforcement learning
+4.5	Dimensionality Reduction
+4.6	Other types
+4.7	Models
+4.8	Training models
+5	Applications
+6	Limitations
+6.1	Bias
+7	Model assessments
+8	Ethics
+9	Hardware
+10	Software
+10.1	Free and open-source software
+10.2	Proprietary software with free and open-source editions
+10.3	Proprietary software
+11	Journals
+12	Conferences
+13	See also
+14	References
+15	Further reading
+16	External links
+Overview
+Machine learning involves computers discovering how they can perform tasks without being explicitly programmed to do so. It involves computers learning from data provided so that they carry out certain tasks. For simple tasks assigned to computers, it is possible to program algorithms telling the machine how to execute all steps required to solve the problem at hand; on the computer's part, no learning is needed. For more advanced tasks, it can be challenging for a human to manually create the needed algorithms. In practice, it can turn out to be more effective to help the machine develop its own algorithm, rather than having human programmers specify every needed step.[7]
+
+The discipline of machine learning employs various approaches to teach computers to accomplish tasks where no fully satisfactory algorithm is available. In cases where vast numbers of potential answers exist, one approach is to label some of the correct answers as valid. This can then be used as training data for the computer to improve the algorithm(s) it uses to determine correct answers. For example, to train a system for the task of digital character recognition, the MNIST dataset of handwritten digits has often been used.[7]
+
+History and relationships to other fields
+See also: Timeline of machine learning
+The term machine learning was coined in 1959 by Arthur Samuel, an American IBMer and pioneer in the field of computer gaming and artificial intelligence.[8][9] A representative book of the machine learning research during the 1960s was the Nilsson's book on Learning Machines, dealing mostly with machine learning for pattern classification.[10] Interest related to pattern recognition continued into the 1970s, as described by Duda and Hart in 1973.[11] In 1981 a report was given on using teaching strategies so that a neural network learns to recognize 40 characters (26 letters, 10 digits, and 4 special symbols) from a computer terminal.[12]
+
+Tom M. Mitchell provided a widely quoted, more formal definition of the algorithms studied in the machine learning field: "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E."[13] This definition of the tasks in which machine learning is concerned offers a fundamentally operational definition rather than defining the field in cognitive terms. This follows Alan Turing's proposal in his paper "Computing Machinery and Intelligence", in which the question "Can machines think?" is replaced with the question "Can machines do what we (as thinking entities) can do?".[14]
+
+Modern day machine learning has two objectives, one is to classify data based on models which have been developed, the other purpose is to make predictions for future outcomes based on these models. A hypothetical algorithm specific to classifying data may use computer vision of moles coupled with supervised learning in order to train it to classify the cancerous moles. Where as, a machine learning algorithm for stock trading may inform the trader of future potential predictions.[15]
+
+Artificial intelligence
+
+Machine learning as subfield of AI[16]
+
+Part of machine learning as subfield of AI or part of AI as subfield of machine learning[17]
+As a scientific endeavor, machine learning grew out of the quest for artificial intelligence. In the early days of AI as an academic discipline, some researchers were interested in having machines learn from data. They attempted to approach the problem with various symbolic methods, as well as what was then termed "neural networks"; these were mostly perceptrons and other models that were later found to be reinventions of the generalized linear models of statistics.[18] Probabilistic reasoning was also employed, especially in automated medical diagnosis.[19]:488
+
+However, an increasing emphasis on the logical, knowledge-based approach caused a rift between AI and machine learning. Probabilistic systems were plagued by theoretical and practical problems of data acquisition and representation.[19]:488 By 1980, expert systems had come to dominate AI, and statistics was out of favor.[20] Work on symbolic/knowledge-based learning did continue within AI, leading to inductive logic programming, but the more statistical line of research was now outside the field of AI proper, in pattern recognition and information retrieval.[19]:708–710; 755 Neural networks research had been abandoned by AI and computer science around the same time. This line, too, was continued outside the AI/CS field, as "connectionism", by researchers from other disciplines including Hopfield, Rumelhart and Hinton. Their main success came in the mid-1980s with the reinvention of backpropagation.[19]:25
+
+Machine learning (ML), reorganized as a separate field, started to flourish in the 1990s. The field changed its goal from achieving artificial intelligence to tackling solvable problems of a practical nature. It shifted focus away from the symbolic approaches it had inherited from AI, and toward methods and models borrowed from statistics and probability theory.[20]
+
+As of 2020, many sources continue to assert that machine learning remains a subfield of AI.[21][22][16] The main disagreement is whether all of ML is part of AI, as this would mean that anyone using ML could claim they are using AI. Others have the view that not all of ML is part of AI[23][24][25] where only an 'intelligent' subset of ML is part of AI.[26]
+
+The question to what is the difference between ML and AI is answered by Judea Pearl in The Book of Why.[27] Accordingly ML learns and predicts based on passive observations, whereas AI implies an agent interacting with the environment to learn and take actions that maximize its chance of successfully achieving its goals.[30]
+
+Data mining
+Machine learning and data mining often employ the same methods and overlap significantly, but while machine learning focuses on prediction, based on known properties learned from the training data, data mining focuses on the discovery of (previously) unknown properties in the data (this is the analysis step of knowledge discovery in databases). Data mining uses many machine learning methods, but with different goals; on the other hand, machine learning also employs data mining methods as "unsupervised learning" or as a preprocessing step to improve learner accuracy. Much of the confusion between these two research communities (which do often have separate conferences and separate journals, ECML PKDD being a major exception) comes from the basic assumptions they work with: in machine learning, performance is usually evaluated with respect to the ability to reproduce known knowledge, while in knowledge discovery and data mining (KDD) the key task is the discovery of previously unknown knowledge. Evaluated with respect to known knowledge, an uninformed (unsupervised) method will easily be outperformed by other supervised methods, while in a typical KDD task, supervised methods cannot be used due to the unavailability of training data.
+
+Optimization
+Machine learning also has intimate ties to optimization: many learning problems are formulated as minimization of some loss function on a training set of examples. Loss functions express the discrepancy between the predictions of the model being trained and the actual problem instances (for example, in classification, one wants to assign a label to instances, and models are trained to correctly predict the pre-assigned labels of a set of examples).[31]
+
+Generalization
+The difference between optimization and machine learning arises from the goal of generalization: while optimization algorithms can minimize the loss on a training set, machine learning is concerned with minimizing the loss on unseen samples. Characterizing the generalization of various learning algorithms is an active topic of current research, especially for deep learning algorithms.
+
+Statistics
+Machine learning and statistics are closely related fields in terms of methods, but distinct in their principal goal: statistics draws population inferences from a sample, while machine learning finds generalizable predictive patterns.[32] According to Michael I. Jordan, the ideas of machine learning, from methodological principles to theoretical tools, have had a long pre-history in statistics.[33] He also suggested the term data science as a placeholder to call the overall field.[33]
+
+Leo Breiman distinguished two statistical modeling paradigms: data model and algorithmic model,[34] wherein "algorithmic model" means more or less the machine learning algorithms like Random forest.
+
+Some statisticians have adopted methods from machine learning, leading to a combined field that they call statistical learning.[35]
+
+Theory
+Main articles: Computational learning theory and Statistical learning theory
+A core objective of a learner is to generalize from its experience.[4][36] Generalization in this context is the ability of a learning machine to perform accurately on new, unseen examples/tasks after having experienced a learning data set. The training examples come from some generally unknown probability distribution (considered representative of the space of occurrences) and the learner has to build a general model about this space that enables it to produce sufficiently accurate predictions in new cases.
+
+The computational analysis of machine learning algorithms and their performance is a branch of theoretical computer science known as computational learning theory. Because training sets are finite and the future is uncertain, learning theory usually does not yield guarantees of the performance of algorithms. Instead, probabilistic bounds on the performance are quite common. The bias–variance decomposition is one way to quantify generalization error.
+
+For the best performance in the context of generalization, the complexity of the hypothesis should match the complexity of the function underlying the data. If the hypothesis is less complex than the function, then the model has under fitted the data. If the complexity of the model is increased in response, then the training error decreases. But if the hypothesis is too complex, then the model is subject to overfitting and generalization will be poorer.[37]
+
+In addition to performance bounds, learning theorists study the time complexity and feasibility of learning. In computational learning theory, a computation is considered feasible if it can be done in polynomial time. There are two kinds of time complexity results. Positive results show that a certain class of functions can be learned in polynomial time. Negative results show that certain classes cannot be learned in polynomial time.
+
+Approaches
+Machine learning approaches are traditionally divided into three broad categories, depending on the nature of the "signal" or "feedback" available to the learning system:
+
+Supervised learning: The computer is presented with example inputs and their desired outputs, given by a "teacher", and the goal is to learn a general rule that maps inputs to outputs.
+Unsupervised learning: No labels are given to the learning algorithm, leaving it on its own to find structure in its input. Unsupervised learning can be a goal in itself (discovering hidden patterns in data) or a means towards an end (feature learning).
+Reinforcement learning: A computer program interacts with a dynamic environment in which it must perform a certain goal (such as driving a vehicle or playing a game against an opponent). As it navigates its problem space, the program is provided feedback that's analogous to rewards, which it tries to maximize.[4]
+Supervised learning
+Main article: Supervised learning
+
+A support-vector machine is a supervised learning model that divides the data into regions separated by a linear boundary. Here, the linear boundary divides the black circles from the white.
+Supervised learning algorithms build a mathematical model of a set of data that contains both the inputs and the desired outputs.[38] The data is known as training data, and consists of a set of training examples. Each training example has one or more inputs and the desired output, also known as a supervisory signal. In the mathematical model, each training example is represented by an array or vector, sometimes called a feature vector, and the training data is represented by a matrix. Through iterative optimization of an objective function, supervised learning algorithms learn a function that can be used to predict the output associated with new inputs.[39] An optimal function will allow the algorithm to correctly determine the output for inputs that were not a part of the training data. An algorithm that improves the accuracy of its outputs or predictions over time is said to have learned to perform that task.[13]
+
+Types of supervised learning algorithms include active learning, classification and regression.[40] Classification algorithms are used when the outputs are restricted to a limited set of values, and regression algorithms are used when the outputs may have any numerical value within a range. As an example, for a classification algorithm that filters emails, the input would be an incoming email, and the output would be the name of the folder in which to file the email.
+
+Similarity learning is an area of supervised machine learning closely related to regression and classification, but the goal is to learn from examples using a similarity function that measures how similar or related two objects are. It has applications in ranking, recommendation systems, visual identity tracking, face verification, and speaker verification.
+
+Unsupervised learning
+Main article: Unsupervised learning
+See also: Cluster analysis
+Unsupervised learning algorithms take a set of data that contains only inputs, and find structure in the data, like grouping or clustering of data points. The algorithms, therefore, learn from test data that has not been labeled, classified or categorized. Instead of responding to feedback, unsupervised learning algorithms identify commonalities in the data and react based on the presence or absence of such commonalities in each new piece of data. A central application of unsupervised learning is in the field of density estimation in statistics, such as finding the probability density function.[41] Though unsupervised learning encompasses other domains involving summarizing and explaining data features.
+
+Cluster analysis is the assignment of a set of observations into subsets (called clusters) so that observations within the same cluster are similar according to one or more predesignated criteria, while observations drawn from different clusters are dissimilar. Different clustering techniques make different assumptions on the structure of the data, often defined by some similarity metric and evaluated, for example, by internal compactness, or the similarity between members of the same cluster, and separation, the difference between clusters. Other methods are based on estimated density and graph connectivity.
+
+Semi-supervised learning
+Main article: Semi-supervised learning
+Semi-supervised learning falls between unsupervised learning (without any labeled training data) and supervised learning (with completely labeled training data). Some of the training examples are missing training labels, yet many machine-learning researchers have found that unlabeled data, when used in conjunction with a small amount of labeled data, can produce a considerable improvement in learning accuracy.
+
+In weakly supervised learning, the training labels are noisy, limited, or imprecise; however, these labels are often cheaper to obtain, resulting in larger effective training sets.[42]
+
+Reinforcement learning
+Main article: Reinforcement learning
+Reinforcement learning is an area of machine learning concerned with how software agents ought to take actions in an environment so as to maximize some notion of cumulative reward. Due to its generality, the field is studied in many other disciplines, such as game theory, control theory, operations research, information theory, simulation-based optimization, multi-agent systems, swarm intelligence, statistics and genetic algorithms. In machine learning, the environment is typically represented as a Markov decision process (MDP). Many reinforcement learning algorithms use dynamic programming techniques.[43] Reinforcement learning algorithms do not assume knowledge of an exact mathematical model of the MDP, and are used when exact models are infeasible. Reinforcement learning algorithms are used in autonomous vehicles or in learning to play a game against a human opponent.
+
+Dimensionality Reduction
+The Dimensionality reduction is a process of reducing the number of random variables under the consideration by obtaining a set of principal variables.[44] In other words, it is a process of reducing the dimension of your feature set also called no of features. Most of the dimensionality reduction techniques can be considered as either feature elimination or extraction. One of the popular method of dimensionality reduction is called as principal component analysis.
+
+Principal Component Analysis (PCA)
+The PCA involves changing higher dimensional data (eg. 3D) to a smaller space (eg. 2D). This results in a smaller dimension of data, (2D instead of 3D) while keeping all original variables in the model without changing the data.[45]
+
+Other types
+Other approaches have been developed which don't fit neatly into this three-fold categorisation, and sometimes more than one is used by the same machine learning system. For example topic modeling, meta learning.[46]
+
+As of 2020, deep learning has become the dominant approach for much ongoing work in the field of machine learning.[7]
+
+Self learning
+Self-learning as a machine learning paradigm was introduced in 1982 along with a neural network capable of self-learning named crossbar adaptive array (CAA).[47] It is a learning with no external rewards and no external teacher advice. The CAA self-learning algorithm computes, in a crossbar fashion, both decisions about actions and emotions (feelings) about consequence situations. The system is driven by the interaction between cognition and emotion.[48] The self-learning algorithm updates a memory matrix W =||w(a,s)|| such that in each iteration executes the following machine learning routine:
+
+ In situation s perform an action a;
+ Receive consequence situation s’;
+ Compute emotion of being in consequence situation v(s’);
+ Update crossbar memory  w’(a,s) = w(a,s) + v(s’).
+It is a system with only one input, situation s, and only one output, action (or behavior) a. There is neither a separate reinforcement input nor an advice input from the environment. The backpropagated value (secondary reinforcement) is the emotion toward the consequence situation. The CAA exists in two environments, one is the behavioral environment where it behaves, and the other is the genetic environment, wherefrom it initially and only once receives initial emotions about situations to be encountered in the behavioral environment. After receiving the genome (species) vector from the genetic environment, the CAA learns a goal-seeking behavior, in an environment that contains both desirable and undesirable situations.[49]
+
+Feature learning
+Main article: Feature learning
+Several learning algorithms aim at discovering better representations of the inputs provided during training.[50] Classic examples include principal components analysis and cluster analysis. Feature learning algorithms, also called representation learning algorithms, often attempt to preserve the information in their input but also transform it in a way that makes it useful, often as a pre-processing step before performing classification or predictions. This technique allows reconstruction of the inputs coming from the unknown data-generating distribution, while not being necessarily faithful to configurations that are implausible under that distribution. This replaces manual feature engineering, and allows a machine to both learn the features and use them to perform a specific task.
+
+Feature learning can be either supervised or unsupervised. In supervised feature learning, features are learned using labeled input data. Examples include artificial neural networks, multilayer perceptrons, and supervised dictionary learning. In unsupervised feature learning, features are learned with unlabeled input data. Examples include dictionary learning, independent component analysis, autoencoders, matrix factorization[51] and various forms of clustering.[52][53][54]
+
+Manifold learning algorithms attempt to do so under the constraint that the learned representation is low-dimensional. Sparse coding algorithms attempt to do so under the constraint that the learned representation is sparse, meaning that the mathematical model has many zeros. Multilinear subspace learning algorithms aim to learn low-dimensional representations directly from tensor representations for multidimensional data, without reshaping them into higher-dimensional vectors.[55] Deep learning algorithms discover multiple levels of representation, or a hierarchy of features, with higher-level, more abstract features defined in terms of (or generating) lower-level features. It has been argued that an intelligent machine is one that learns a representation that disentangles the underlying factors of variation that explain the observed data.[56]
+
+Feature learning is motivated by the fact that machine learning tasks such as classification often require input that is mathematically and computationally convenient to process. However, real-world data such as images, video, and sensory data has not yielded to attempts to algorithmically define specific features. An alternative is to discover such features or representations through examination, without relying on explicit algorithms.
+
+Sparse dictionary learning
+Main article: Sparse dictionary learning
+Sparse dictionary learning is a feature learning method where a training example is represented as a linear combination of basis functions, and is assumed to be a sparse matrix. The method is strongly NP-hard and difficult to solve approximately.[57] A popular heuristic method for sparse dictionary learning is the K-SVD algorithm. Sparse dictionary learning has been applied in several contexts. In classification, the problem is to determine the class to which a previously unseen training example belongs. For a dictionary where each class has already been built, a new training example is associated with the class that is best sparsely represented by the corresponding dictionary. Sparse dictionary learning has also been applied in image de-noising. The key idea is that a clean image patch can be sparsely represented by an image dictionary, but the noise cannot.[58]
+
+Anomaly detection
+Main article: Anomaly detection
+In data mining, anomaly detection, also known as outlier detection, is the identification of rare items, events or observations which raise suspicions by differing significantly from the majority of the data.[59] Typically, the anomalous items represent an issue such as bank fraud, a structural defect, medical problems or errors in a text. Anomalies are referred to as outliers, novelties, noise, deviations and exceptions.[60]
+
+In particular, in the context of abuse and network intrusion detection, the interesting objects are often not rare objects, but unexpected bursts of inactivity. This pattern does not adhere to the common statistical definition of an outlier as a rare object, and many outlier detection methods (in particular, unsupervised algorithms) will fail on such data unless it has been aggregated appropriately. Instead, a cluster analysis algorithm may be able to detect the micro-clusters formed by these patterns.[61]
+
+Three broad categories of anomaly detection techniques exist.[62] Unsupervised anomaly detection techniques detect anomalies in an unlabeled test data set under the assumption that the majority of the instances in the data set are normal, by looking for instances that seem to fit least to the remainder of the data set. Supervised anomaly detection techniques require a data set that has been labeled as "normal" and "abnormal" and involves training a classifier (the key difference to many other statistical classification problems is the inherently unbalanced nature of outlier detection). Semi-supervised anomaly detection techniques construct a model representing normal behavior from a given normal training data set and then test the likelihood of a test instance to be generated by the model.
+
+Robot learning
+In developmental robotics, robot learning algorithms generate their own sequences of learning experiences, also known as a curriculum, to cumulatively acquire new skills through self-guided exploration and social interaction with humans. These robots use guidance mechanisms such as active learning, maturation, motor synergies and imitation.
+
+Association rules
+Main article: Association rule learning
+See also: Inductive logic programming
+Association rule learning is a rule-based machine learning method for discovering relationships between variables in large databases. It is intended to identify strong rules discovered in databases using some measure of "interestingness".[63]
+
+Rule-based machine learning is a general term for any machine learning method that identifies, learns, or evolves "rules" to store, manipulate or apply knowledge. The defining characteristic of a rule-based machine learning algorithm is the identification and utilization of a set of relational rules that collectively represent the knowledge captured by the system. This is in contrast to other machine learning algorithms that commonly identify a singular model that can be universally applied to any instance in order to make a prediction.[64] Rule-based machine learning approaches include learning classifier systems, association rule learning, and artificial immune systems.
+
+Based on the concept of strong rules, Rakesh Agrawal, Tomasz Imieliński and Arun Swami introduced association rules for discovering regularities between products in large-scale transaction data recorded by point-of-sale (POS) systems in supermarkets.[65] For example, the rule {\displaystyle \{\mathrm {onions,potatoes} \}\Rightarrow \{\mathrm {burger} \}}\{{\mathrm  {onions,potatoes}}\}\Rightarrow \{{\mathrm  {burger}}\} found in the sales data of a supermarket would indicate that if a customer buys onions and potatoes together, they are likely to also buy hamburger meat. Such information can be used as the basis for decisions about marketing activities such as promotional pricing or product placements. In addition to market basket analysis, association rules are employed today in application areas including Web usage mining, intrusion detection, continuous production, and bioinformatics. In contrast with sequence mining, association rule learning typically does not consider the order of items either within a transaction or across transactions.
+
+Learning classifier systems (LCS) are a family of rule-based machine learning algorithms that combine a discovery component, typically a genetic algorithm, with a learning component, performing either supervised learning, reinforcement learning, or unsupervised learning. They seek to identify a set of context-dependent rules that collectively store and apply knowledge in a piecewise manner in order to make predictions.[66]
+
+Inductive logic programming (ILP) is an approach to rule-learning using logic programming as a uniform representation for input examples, background knowledge, and hypotheses. Given an encoding of the known background knowledge and a set of examples represented as a logical database of facts, an ILP system will derive a hypothesized logic program that entails all positive and no negative examples. Inductive programming is a related field that considers any kind of programming language for representing hypotheses (and not only logic programming), such as functional programs.
+
+Inductive logic programming is particularly useful in bioinformatics and natural language processing. Gordon Plotkin and Ehud Shapiro laid the initial theoretical foundation for inductive machine learning in a logical setting.[67][68][69] Shapiro built their first implementation (Model Inference System) in 1981: a Prolog program that inductively inferred logic programs from positive and negative examples.[70] The term inductive here refers to philosophical induction, suggesting a theory to explain observed facts, rather than mathematical induction, proving a property for all members of a well-ordered set.
+
+Models
+Performing machine learning involves creating a model, which is trained on some training data and then can process additional data to make predictions. Various types of models have been used and researched for machine learning systems.
+
+Artificial neural networks
+Main article: Artificial neural network
+See also: Deep learning
+
+An artificial neural network is an interconnected group of nodes, akin to the vast network of neurons in a brain. Here, each circular node represents an artificial neuron and an arrow represents a connection from the output of one artificial neuron to the input of another.
+Artificial neural networks (ANNs), or connectionist systems, are computing systems vaguely inspired by the biological neural networks that constitute animal brains. Such systems "learn" to perform tasks by considering examples, generally without being programmed with any task-specific rules.
+
+An ANN is a model based on a collection of connected units or nodes called "artificial neurons", which loosely model the neurons in a biological brain. Each connection, like the synapses in a biological brain, can transmit information, a "signal", from one artificial neuron to another. An artificial neuron that receives a signal can process it and then signal additional artificial neurons connected to it. In common ANN implementations, the signal at a connection between artificial neurons is a real number, and the output of each artificial neuron is computed by some non-linear function of the sum of its inputs. The connections between artificial neurons are called "edges". Artificial neurons and edges typically have a weight that adjusts as learning proceeds. The weight increases or decreases the strength of the signal at a connection. Artificial neurons may have a threshold such that the signal is only sent if the aggregate signal crosses that threshold. Typically, artificial neurons are aggregated into layers. Different layers may perform different kinds of transformations on their inputs. Signals travel from the first layer (the input layer) to the last layer (the output layer), possibly after traversing the layers multiple times.
+
+The original goal of the ANN approach was to solve problems in the same way that a human brain would. However, over time, attention moved to performing specific tasks, leading to deviations from biology. Artificial neural networks have been used on a variety of tasks, including computer vision, speech recognition, machine translation, social network filtering, playing board and video games and medical diagnosis.
+
+Deep learning consists of multiple hidden layers in an artificial neural network. This approach tries to model the way the human brain processes light and sound into vision and hearing. Some successful applications of deep learning are computer vision and speech recognition.[71]
+
+Decision trees
+Main article: Decision tree learning
+Decision tree learning uses a decision tree as a predictive model to go from observations about an item (represented in the branches) to conclusions about the item's target value (represented in the leaves). It is one of the predictive modeling approaches used in statistics, data mining, and machine learning. Tree models where the target variable can take a discrete set of values are called classification trees; in these tree structures, leaves represent class labels and branches represent conjunctions of features that lead to those class labels. Decision trees where the target variable can take continuous values (typically real numbers) are called regression trees. In decision analysis, a decision tree can be used to visually and explicitly represent decisions and decision making. In data mining, a decision tree describes data, but the resulting classification tree can be an input for decision making.
+
+Support-vector machines
+Main article: Support-vector machine
+Support-vector machines (SVMs), also known as support-vector networks, are a set of related supervised learning methods used for classification and regression. Given a set of training examples, each marked as belonging to one of two categories, an SVM training algorithm builds a model that predicts whether a new example falls into one category or the other.[72] An SVM training algorithm is a non-probabilistic, binary, linear classifier, although methods such as Platt scaling exist to use SVM in a probabilistic classification setting. In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their inputs into high-dimensional feature spaces.
+
+
+Illustration of linear regression on a data set.
+Regression analysis
+Main article: Regression analysis
+Regression analysis encompasses a large variety of statistical methods to estimate the relationship between input variables and their associated features. Its most common form is linear regression, where a single line is drawn to best fit the given data according to a mathematical criterion such as ordinary least squares. The latter is often extended by regularization (mathematics) methods to mitigate overfitting and bias, as in ridge regression. When dealing with non-linear problems, go-to models include polynomial regression (for example, used for trendline fitting in Microsoft Excel[73]), logistic regression (often used in statistical classification) or even kernel regression, which introduces non-linearity by taking advantage of the kernel trick to implicitly map input variables to higher-dimensional space.
+
+Bayesian networks
+Main article: Bayesian network
+
+A simple Bayesian network. Rain influences whether the sprinkler is activated, and both rain and the sprinkler influence whether the grass is wet.
+A Bayesian network, belief network, or directed acyclic graphical model is a probabilistic graphical model that represents a set of random variables and their conditional independence with a directed acyclic graph (DAG). For example, a Bayesian network could represent the probabilistic relationships between diseases and symptoms. Given symptoms, the network can be used to compute the probabilities of the presence of various diseases. Efficient algorithms exist that perform inference and learning. Bayesian networks that model sequences of variables, like speech signals or protein sequences, are called dynamic Bayesian networks. Generalizations of Bayesian networks that can represent and solve decision problems under uncertainty are called influence diagrams.
+
+Genetic algorithms
+Main article: Genetic algorithm
+A genetic algorithm (GA) is a search algorithm and heuristic technique that mimics the process of natural selection, using methods such as mutation and crossover to generate new genotypes in the hope of finding good solutions to a given problem. In machine learning, genetic algorithms were used in the 1980s and 1990s.[74][75] Conversely, machine learning techniques have been used to improve the performance of genetic and evolutionary algorithms.[76]
+
+Training models
+Usually, machine learning models require a lot of data in order for them to perform well. Usually, when training a machine learning model, one needs to collect a large, representative sample of data from a training set. Data from the training set can be as varied as a corpus of text, a collection of images, and data collected from individual users of a service. Overfitting is something to watch out for when training a machine learning model. Trained models derived from biased data can result in skewed or undesired predictions. Algorithmic bias is a potential result from data not fully prepared for training.
+
+Federated learning
+Main article: Federated learning
+Federated learning is an adapted form of distributed artificial intelligence to training machine learning models that decentralizes the training process, allowing for users' privacy to be maintained by not needing to send their data to a centralized server. This also increases efficiency by decentralizing the training process to many devices. For example, Gboard uses federated machine learning to train search query prediction models on users' mobile phones without having to send individual searches back to Google.[77]
+
+Applications
+There are many applications for machine learning, including:
+
+Agriculture
+Anatomy
+Adaptive websites
+Affective computing
+Banking
+Bioinformatics
+Brain–machine interfaces
+Cheminformatics
+Citizen science
+Computer networks
+Computer vision
+Credit-card fraud detection
+Data quality
+DNA sequence classification
+Economics
+Financial market analysis[78]
+General game playing
+Handwriting recognition
+Information retrieval
+Insurance
+Internet fraud detection
+Linguistics
+Machine learning control
+Machine perception
+Machine translation
+Marketing
+Medical diagnosis
+Natural language processing
+Natural language understanding
+Online advertising
+Optimization
+Recommender systems
+Robot locomotion
+Search engines
+Sentiment analysis
+Sequence mining
+Software engineering
+Speech recognition
+Structural health monitoring
+Syntactic pattern recognition
+Telecommunication
+Theorem proving
+Time series forecasting
+User behavior analytics
+Behaviorism
+In 2006, the media-services provider Netflix held the first "Netflix Prize" competition to find a program to better predict user preferences and improve the accuracy of its existing Cinematch movie recommendation algorithm by at least 10%. A joint team made up of researchers from AT&T Labs-Research in collaboration with the teams Big Chaos and Pragmatic Theory built an ensemble model to win the Grand Prize in 2009 for $1 million.[79] Shortly after the prize was awarded, Netflix realized that viewers' ratings were not the best indicators of their viewing patterns ("everything is a recommendation") and they changed their recommendation engine accordingly.[80] In 2010 The Wall Street Journal wrote about the firm Rebellion Research and their use of machine learning to predict the financial crisis.[81] In 2012, co-founder of Sun Microsystems, Vinod Khosla, predicted that 80% of medical doctors' jobs would be lost in the next two decades to automated machine learning medical diagnostic software.[82] In 2014, it was reported that a machine learning algorithm had been applied in the field of art history to study fine art paintings and that it may have revealed previously unrecognized influences among artists.[83] In 2019 Springer Nature published the first research book created using machine learning.[84] In 2020, machine learning technology was used to help make diagnoses and aid researchers in developing a cure for COVID-19.[85] Machine learning is recently applied to predict the green behavior of human-being.[86]
+
+Limitations
+Although machine learning has been transformative in some fields, machine-learning programs often fail to deliver expected results.[87][88][89] Reasons for this are numerous: lack of (suitable) data, lack of access to the data, data bias, privacy problems, badly chosen tasks and algorithms, wrong tools and people, lack of resources, and evaluation problems.[90]
+
+In 2018, a self-driving car from Uber failed to detect a pedestrian, who was killed after a collision.[91] Attempts to use machine learning in healthcare with the IBM Watson system failed to deliver even after years of time and billions of dollars invested.[92][93]
+
+Machine learning has been used as a strategy to update the evidence related to systematic review and increased reviewer burden related to the growth of biomedical literature. While it has improved with training sets, it has not yet developed sufficiently to reduce the workload burden without limiting the necessary sensitivity for the findings research themselves.[94]
+
+Bias
+Main article: Algorithmic bias
+Machine learning approaches in particular can suffer from different data biases. A machine learning system trained specifically on current customers may not be able to predict the needs of new customer groups that are not represented in the training data. When trained on man-made data, machine learning is likely to pick up the constitutional and unconscious biases already present in society.[95] Language models learned from data have been shown to contain human-like biases.[96][97] Machine learning systems used for criminal risk assessment have been found to be biased against black people.[98][99] In 2015, Google photos would often tag black people as gorillas,[100] and in 2018 this still was not well resolved, but Google reportedly was still using the workaround to remove all gorillas from the training data, and thus was not able to recognize real gorillas at all.[101] Similar issues with recognizing non-white people have been found in many other systems.[102] In 2016, Microsoft tested a chatbot that learned from Twitter, and it quickly picked up racist and sexist language.[103] Because of such challenges, the effective use of machine learning may take longer to be adopted in other domains.[104] Concern for fairness in machine learning, that is, reducing bias in machine learning and propelling its use for human good is increasingly expressed by artificial intelligence scientists, including Fei-Fei Li, who reminds engineers that "There’s nothing artificial about AI...It’s inspired by people, it’s created by people, and—most importantly—it impacts people. It is a powerful tool we are only just beginning to understand, and that is a profound responsibility.”[105]
+
+In addition to racial bias in machine learning, its usage in airport security has been found to target those who do not identify within the gender binary.[106][107][100][108] In 2010, the Transportation Security Administration (TSA) started to use machine learning for bomb detection scanning.[109] However, design justice advocates have found that the algorithm for TSA machine learning technology also detect bodies that may not align with the constructs of cisnormativity. When using ML bomb detection scanning technology, TSA agents are trained to search a person based on whether they are male or female. This has shown to be harmful towards people who identify as transgender, non-binary, gender fluid, gender-non conforming, or intersex.[110][108] In 2018, nonbinary trans-feminine author and design justice advocate Sasha Costanza-Chock wrote on airport security's transition to AI: "I worry that the current path of A.I. development will produce systems that erase those of us on the margins, whether intentionally or not, whether in a spectacular moment of Singularity or (far more likely) through the mundane and relentless repetition of reduction in a thousand daily interactions with A.I. systems that, increasingly, will touch every domain of our lives."[108] Many other people have shared their stories online about coded bias as a result of the use of machine learning in airport security procedures.[110] For example, transgender women will almost always be flagged because their genitalia does not match the scanning guidelines set by the Advanced Imaging Technology (AIT) scanner.[108] Since the implementation of AI-based protocol in 2010, the TSA has faced backlash from queer and transgender advocacy groups, such as the National Center for Lesbian Rights, the National Center for Transgender Equality, and the Transgender Law Center.[109] All argue that despite the TSA's commitment to unbiased security measures, AIT and machine learning are constructed based off of biased data sets that enforce a system of oppression for people who do not identify as cisgender.[111][112]
+
+Model assessments
+Classification of machine learning models can be validated by accuracy estimation techniques like the holdout method, which splits the data in a training and test set (conventionally 2/3 training set and 1/3 test set designation) and evaluates the performance of the training model on the test set. In comparison, the K-fold-cross-validation method randomly partitions the data into K subsets and then K experiments are performed each respectively considering 1 subset for evaluation and the remaining K-1 subsets for training the model. In addition to the holdout and cross-validation methods, bootstrap, which samples n instances with replacement from the dataset, can be used to assess model accuracy.[113]
+
+In addition to overall accuracy, investigators frequently report sensitivity and specificity meaning True Positive Rate (TPR) and True Negative Rate (TNR) respectively. Similarly, investigators sometimes report the false positive rate (FPR) as well as the false negative rate (FNR). However, these rates are ratios that fail to reveal their numerators and denominators. The total operating characteristic (TOC) is an effective method to express a model's diagnostic ability. TOC shows the numerators and denominators of the previously mentioned rates, thus TOC provides more information than the commonly used receiver operating characteristic (ROC) and ROC's associated area under the curve (AUC).[114]
+
+Ethics
+See also: AI control problem
+Machine learning poses a host of ethical questions. Systems which are trained on datasets collected with biases may exhibit these biases upon use (algorithmic bias), thus digitizing cultural prejudices.[115] For example, in 1988, the UK's Commission for Racial Equality found that St. George's Medical School had been using a computer program trained from data of previous admissions staff and this program had denied nearly 60 candidates who were found to be either women or had non-European sounding names.[95] Using job hiring data from a firm with racist hiring policies may lead to a machine learning system duplicating the bias by scoring job applicants by similarity to previous successful applicants.[116][117] Responsible collection of data and documentation of algorithmic rules used by a system thus is a critical part of machine learning.
+
+AI can be well-equipped to make decisions in technical fields, which rely heavily on data and historical information. These decisions rely on objectivity and logical reasoning.[118] Because human languages contain biases, machines trained on language corpora will necessarily also learn these biases.[119][120]
+
+Other forms of ethical challenges, not related to personal biases, are seen in health care. There are concerns among health care professionals that these systems might not be designed in the public's interest but as income-generating machines.[121] This is especially true in the United States where there is a long-standing ethical dilemma of improving health care, but also increasing profits. For example, the algorithms could be designed to provide patients with unnecessary tests or medication in which the algorithm's proprietary owners hold stakes. There is potential for machine learning in health care to provide professionals an additional tool to diagnose, medicate, and plan recovery paths for patients, but this requires these biases to be mitigated.[122]
+
+Hardware
+Since the 2010s, advances in both machine learning algorithms and computer hardware have led to more efficient methods for training deep neural networks (a particular narrow subdomain of machine learning) that contain many layers of non-linear hidden units.[123] By 2019, graphic processing units (GPUs), often with AI-specific enhancements, had displaced CPUs as the dominant method of training large-scale commercial cloud AI.[124] OpenAI estimated the hardware compute used in the largest deep learning projects from AlexNet (2012) to AlphaZero (2017), and found a 300,000-fold increase in the amount of compute required, with a doubling-time trendline of 3.4 months.[125][126]
+
+Software
+Software suites containing a variety of machine learning algorithms include the following:
+
+Free and open-source software
+Caffe
+CNTK
+Deeplearning4j
+DeepSpeed
+ELKI
+Infer.NET
+Keras
+LightGBM
+Mahout
+Mallet
+ML.NET
+mlpack
+MXNet
+Neural Lab
+Octave
+OpenNN
+Orange
+pandas (software)
+PyTorch
+ROOT (TMVA with ROOT)
+scikit-learn
+Shogun
+Spark MLlib
+SystemML
+TensorFlow
+Torch / PyTorch
+Weka / MOA
+XGBoost
+Yooreeka
+Proprietary software with free and open-source editions
+KNIME
+RapidMiner
+Proprietary software
+Amazon Machine Learning
+Angoss KnowledgeSTUDIO
+Azure Machine Learning
+Ayasdi
+IBM Watson Studio
+Google Prediction API
+IBM SPSS Modeler
+KXEN Modeler
+LIONsolver
+Mathematica
+MATLAB
+Neural Designer
+NeuroSolutions
+Oracle Data Mining
+Oracle AI Platform Cloud Service
+PolyAnalyst
+RCASE
+SAS Enterprise Miner
+SequenceL
+Splunk
+STATISTICA Data Miner
+Journals
+Journal of Machine Learning Research
+Machine Learning
+Nature Machine Intelligence
+Neural Computation
+
+
+
+
+Natural language processing (NLP) is a subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language, in particular how to program computers to process and analyze large amounts of natural language data. The result is a computer capable of "understanding" the contents of documents, including the contextual nuances of the language within them. The technology can then accurately extract information and insights contained in the documents as well as categorize and organize the documents themselves.
+
+Challenges in natural language processing frequently involve speech recognition, natural language understanding, and natural-language generation.
+
+
+Contents
+1	History
+1.1	Symbolic NLP (1950s - early 1990s)
+1.2	Statistical NLP (1990s - 2010s)
+1.3	Neural NLP (present)
+2	Methods: Rules, statistics, neural networks
+2.1	Statistical methods
+2.2	Neural networks
+3	Common NLP tasks
+3.1	Text and speech processing
+3.2	Morphological analysis
+3.3	Syntactic analysis
+3.4	Lexical semantics (of individual words in context)
+3.5	Relational semantics (semantics of individual sentences)
+3.6	Discourse (semantics beyond individual sentences)
+3.7	Higher-level NLP applications
+4	General tendencies and (possible) future directions
+4.1	Cognition and NLP
+5	See also
+6	References
+7	Further reading
+History
+Further information: History of natural language processing
+Natural language processing has its roots in the 1950s. Already in 1950, Alan Turing published an article titled "Computing Machinery and Intelligence" which proposed what is now called the Turing test as a criterion of intelligence, a task that involves the automated interpretation and generation of natural language, but at the time not articulated as a problem separate from artificial intelligence.
+
+Symbolic NLP (1950s - early 1990s)
+The premise of symbolic NLP is well-summarized by John Searle's Chinese room experiment: Given a collection of rules (e.g., a Chinese phrasebook, with questions and matching answers), the computer emulates natural language understanding (or other NLP tasks) by applying those rules to the data it is confronted with.
+
+1950s: The Georgetown experiment in 1954 involved fully automatic translation of more than sixty Russian sentences into English. The authors claimed that within three or five years, machine translation would be a solved problem.[2] However, real progress was much slower, and after the ALPAC report in 1966, which found that ten-year-long research had failed to fulfill the expectations, funding for machine translation was dramatically reduced. Little further research in machine translation was conducted until the late 1980s when the first statistical machine translation systems were developed.
+1960s: Some notably successful natural language processing systems developed in the 1960s were SHRDLU, a natural language system working in restricted "blocks worlds" with restricted vocabularies, and ELIZA, a simulation of a Rogerian psychotherapist, written by Joseph Weizenbaum between 1964 and 1966. Using almost no information about human thought or emotion, ELIZA sometimes provided a startlingly human-like interaction. When the "patient" exceeded the very small knowledge base, ELIZA might provide a generic response, for example, responding to "My head hurts" with "Why do you say your head hurts?".
+1970s: During the 1970s, many programmers began to write "conceptual ontologies", which structured real-world information into computer-understandable data. Examples are MARGIE (Schank, 1975), SAM (Cullingford, 1978), PAM (Wilensky, 1978), TaleSpin (Meehan, 1976), QUALM (Lehnert, 1977), Politics (Carbonell, 1979), and Plot Units (Lehnert 1981). During this time, the first many chatterbots were written (e.g., PARRY).
+1980s: The 1980s and early 1990s mark the hey-day of symbolic methods in NLP. Focus areas of the time included research on rule-based parsing (e.g., the development of HPSG as a computational operationalization of generative grammar), morphology (e.g., two-level morphology[3]), semantics (e.g., Lesk algorithm), reference (e.g., within Centering Theory[4]) and other areas of natural language understanding (e.g., in the Rhetorical Structure Theory). Other lines of research were continued, e.g., the development of chatterbots with Racter and Jabberwacky. An important development (that eventually led to the statistical turn in the 1990s) was the rising importance of quantitative evaluation in this period.[5]
+Statistical NLP (1990s - 2010s)
+Up to the 1980s, most natural language processing systems were based on complex sets of hand-written rules. Starting in the late 1980s, however, there was a revolution in natural language processing with the introduction of machine learning algorithms for language processing. This was due to both the steady increase in computational power (see Moore's law) and the gradual lessening of the dominance of Chomskyan theories of linguistics (e.g. transformational grammar), whose theoretical underpinnings discouraged the sort of corpus linguistics that underlies the machine-learning approach to language processing.[6]
+
+1990s: Many of the notable early successes on statistical methods in NLP occurred in the field of machine translation, due especially to work at IBM Research. These systems were able to take advantage of existing multilingual textual corpora that had been produced by the Parliament of Canada and the European Union as a result of laws calling for the translation of all governmental proceedings into all official languages of the corresponding systems of government. However, most other systems depended on corpora specifically developed for the tasks implemented by these systems, which was (and often continues to be) a major limitation in the success of these systems. As a result, a great deal of research has gone into methods of more effectively learning from limited amounts of data.
+2000s: With the growth of the web, increasing amounts of raw (unannotated) language data has become available since the mid-1990s. Research has thus increasingly focused on unsupervised and semi-supervised learning algorithms. Such algorithms can learn from data that has not been hand-annotated with the desired answers or using a combination of annotated and non-annotated data. Generally, this task is much more difficult than supervised learning, and typically produces less accurate results for a given amount of input data. However, there is an enormous amount of non-annotated data available (including, among other things, the entire content of the World Wide Web), which can often make up for the inferior results if the algorithm used has a low enough time complexity to be practical.
+Neural NLP (present)
+In the 2010s, representation learning and deep neural network-style machine learning methods became widespread in natural language processing, due in part to a flurry of results showing that such techniques[7][8] can achieve state-of-the-art results in many natural language tasks, for example in language modeling,[9] parsing,[10][11] and many others. This is increasingly important in medicine and healthcare, where NLP is being used to analyze notes and text in electronic health records that would otherwise be inaccessible for study when seeking to improve care.[12]
+
+Methods: Rules, statistics, neural networks
+In the early days, many language-processing systems were designed by symbolic methods, i.e., the hand-coding of a set of rules, coupled with a dictionary lookup:[13][14] such as by writing grammars or devising heuristic rules for stemming.
+
+More recent systems based on machine-learning algorithms have many advantages over hand-produced rules:
+
+The learning procedures used during machine learning automatically focus on the most common cases, whereas when writing rules by hand it is often not at all obvious where the effort should be directed.
+Automatic learning procedures can make use of statistical inference algorithms to produce models that are robust to unfamiliar input (e.g. containing words or structures that have not been seen before) and to erroneous input (e.g. with misspelled words or words accidentally omitted). Generally, handling such input gracefully with handwritten rules, or, more generally, creating systems of handwritten rules that make soft decisions, is extremely difficult, error-prone and time-consuming.
+Systems based on automatically learning the rules can be made more accurate simply by supplying more input data. However, systems based on handwritten rules can only be made more accurate by increasing the complexity of the rules, which is a much more difficult task. In particular, there is a limit to the complexity of systems based on handwritten rules, beyond which the systems become more and more unmanageable. However, creating more data to input to machine-learning systems simply requires a corresponding increase in the number of man-hours worked, generally without significant increases in the complexity of the annotation process.
+Despite the popularity of machine learning in NLP research, symbolic methods are still (2020) commonly used
+
+when the amount of training data is insufficient to successfully apply machine learning methods, e.g., for the machine translation of low-resource languages such as provided by the Apertium system,
+for preprocessing in NLP pipelines, e.g., tokenization, or
+for postprocessing and transforming the output of NLP pipelines, e.g., for knowledge extraction from syntactic parses.
+Statistical methods
+Since the so-called "statistical revolution"[15][16] in the late 1980s and mid-1990s, much natural language processing research has relied heavily on machine learning. The machine-learning paradigm calls instead for using statistical inference to automatically learn such rules through the analysis of large corpora (the plural form of corpus, is a set of documents, possibly with human or computer annotations) of typical real-world examples.
+
+Many different classes of machine-learning algorithms have been applied to natural-language-processing tasks. These algorithms take as input a large set of "features" that are generated from the input data. Increasingly, however, research has focused on statistical models, which make soft, probabilistic decisions based on attaching real-valued weights to each input feature. Such models have the advantage that they can express the relative certainty of many different possible answers rather than only one, producing more reliable results when such a model is included as a component of a larger system.
+
+Some of the earliest-used machine learning algorithms, such as decision trees, produced systems of hard if-then rules similar to existing hand-written rules. However, part-of-speech tagging introduced the use of hidden Markov models to natural language processing, and increasingly, research has focused on statistical models, which make soft, probabilistic decisions based on attaching real-valued weights to the features making up the input data. The cache language models upon which many speech recognition systems now rely are examples of such statistical models. Such models are generally more robust when given unfamiliar input, especially input that contains errors (as is very common for real-world data), and produce more reliable results when integrated into a larger system comprising multiple subtasks.
+
+Since the neural turn, statistical methods in NLP research have been largely replaced by neural networks. However, they continue to be relevant for contexts in which statistical interpretability and transparency is required.
+
+Neural networks
+Further information: Artificial neural network
+A major drawback of statistical methods is that they require elaborate feature engineering. Since 2015,[17] the field has thus largely abandoned statistical methods and shifted to neural networks for machine learning. Popular techniques include the use of word embeddings to capture semantic properties of words, and an increase in end-to-end learning of a higher-level task (e.g., question answering) instead of relying on a pipeline of separate intermediate tasks (e.g., part-of-speech tagging and dependency parsing). In some areas, this shift has entailed substantial changes in how NLP systems are designed, such that deep neural network-based approaches may be viewed as a new paradigm distinct from statistical natural language processing. For instance, the term neural machine translation (NMT) emphasizes the fact that deep learning-based approaches to machine translation directly learn sequence-to-sequence transformations, obviating the need for intermediate steps such as word alignment and language modeling that was used in statistical machine translation (SMT). Latest works tend to use non-technical structure of a given task to build proper neural network.[18]
+
+Common NLP tasks
+The following is a list of some of the most commonly researched tasks in natural language processing. Some of these tasks have direct real-world applications, while others more commonly serve as subtasks that are used to aid in solving larger tasks.
+
+Though natural language processing tasks are closely intertwined, they can be subdivided into categories for convenience. A coarse division is given below.
+
+Text and speech processing
+Optical character recognition (OCR)
+Given an image representing printed text, determine the corresponding text.
+Speech recognition
+Given a sound clip of a person or people speaking, determine the textual representation of the speech. This is the opposite of text to speech and is one of the extremely difficult problems colloquially termed "AI-complete" (see above). In natural speech there are hardly any pauses between successive words, and thus speech segmentation is a necessary subtask of speech recognition (see below). In most spoken languages, the sounds representing successive letters blend into each other in a process termed coarticulation, so the conversion of the analog signal to discrete characters can be a very difficult process. Also, given that words in the same language are spoken by people with different accents, the speech recognition software must be able to recognize the wide variety of input as being identical to each other in terms of its textual equivalent.
+Speech segmentation
+Given a sound clip of a person or people speaking, separate it into words. A subtask of speech recognition and typically grouped with it.
+Text-to-speech
+Given a text, transform those units and produce a spoken representation. Text-to-speech can be used to aid the visually impaired.[19]
+Word segmentation (Tokenization)
+Separate a chunk of continuous text into separate words. For a language like English, this is fairly trivial, since words are usually separated by spaces. However, some written languages like Chinese, Japanese and Thai do not mark word boundaries in such a fashion, and in those languages text segmentation is a significant task requiring knowledge of the vocabulary and morphology of words in the language. Sometimes this process is also used in cases like bag of words (BOW) creation in data mining.
+Morphological analysis
+Lemmatization
+The task of removing inflectional endings only and to return the base dictionary form of a word which is also known as a lemma. Lemmatization is another technique for reducing words to their normalized form. But in this case, the transformation actually uses a dictionary to map words to their actual form.[20]
+Morphological segmentation
+Separate words into individual morphemes and identify the class of the morphemes. The difficulty of this task depends greatly on the complexity of the morphology (i.e., the structure of words) of the language being considered. English has fairly simple morphology, especially inflectional morphology, and thus it is often possible to ignore this task entirely and simply model all possible forms of a word (e.g., "open, opens, opened, opening") as separate words. In languages such as Turkish or Meitei,[21] a highly agglutinated Indian language, however, such an approach is not possible, as each dictionary entry has thousands of possible word forms.
+Part-of-speech tagging
+Given a sentence, determine the part of speech (POS) for each word. Many words, especially common ones, can serve as multiple parts of speech. For example, "book" can be a noun ("the book on the table") or verb ("to book a flight"); "set" can be a noun, verb or adjective; and "out" can be any of at least five different parts of speech.
+Stemming
+The process of reducing inflected (or sometimes derived) words to a base form (e.g., "close" will be the root for "closed", "closing", "close", "closer" etc.). Stemming yields similar results as lemmatization, but does so on grounds of rules, not a dictionary.
+Syntactic analysis
+Grammar induction[22]
+Generate a formal grammar that describes a language's syntax.
+Sentence breaking (also known as "sentence boundary disambiguation")
+Given a chunk of text, find the sentence boundaries. Sentence boundaries are often marked by periods or other punctuation marks, but these same characters can serve other purposes (e.g., marking abbreviations).
+Parsing
+Determine the parse tree (grammatical analysis) of a given sentence. The grammar for natural languages is ambiguous and typical sentences have multiple possible analyses: perhaps surprisingly, for a typical sentence there may be thousands of potential parses (most of which will seem completely nonsensical to a human). There are two primary types of parsing: dependency parsing and constituency parsing. Dependency parsing focuses on the relationships between words in a sentence (marking things like primary objects and predicates), whereas constituency parsing focuses on building out the parse tree using a probabilistic context-free grammar (PCFG) (see also stochastic grammar).
+Lexical semantics (of individual words in context)
+Lexical semantics
+What is the computational meaning of individual words in context?
+Distributional semantics
+How can we learn semantic representations from data?
+Named entity recognition (NER)
+Given a stream of text, determine which items in the text map to proper names, such as people or places, and what the type of each such name is (e.g. person, location, organization). Although capitalization can aid in recognizing named entities in languages such as English, this information cannot aid in determining the type of named entity, and in any case, is often inaccurate or insufficient. For example, the first letter of a sentence is also capitalized, and named entities often span several words, only some of which are capitalized. Furthermore, many other languages in non-Western scripts (e.g. Chinese or Arabic) do not have any capitalization at all, and even languages with capitalization may not consistently use it to distinguish names. For example, German capitalizes all nouns, regardless of whether they are names, and French and Spanish do not capitalize names that serve as adjectives.
+Sentiment analysis (see also Multimodal sentiment analysis)
+Extract subjective information usually from a set of documents, often using online reviews to determine "polarity" about specific objects. It is especially useful for identifying trends of public opinion in social media, for marketing.
+Terminology extraction
+The goal of terminology extraction is to automatically extract relevant terms from a given corpus.
+Word sense disambiguation
+Many words have more than one meaning; we have to select the meaning which makes the most sense in context. For this problem, we are typically given a list of words and associated word senses, e.g. from a dictionary or an online resource such as WordNet.
+Relational semantics (semantics of individual sentences)
+Relationship extraction
+Given a chunk of text, identify the relationships among named entities (e.g. who is married to whom).
+Semantic parsing
+Given a piece of text (typically a sentence), produce a formal representation of its semantics, either as a graph (e.g., in AMR parsing) or in accordance with a logical formalism (e.g., in DRT parsing). This challenge typically includes aspects of several more elementary NLP tasks from semantics (e.g., semantic role labelling, word sense disambiguation) and can be extended to include full-fledged discourse analysis (e.g., discourse analysis, coreference; see Natural language understanding below).
+Semantic role labelling (see also implicit semantic role labelling below)
+Given a single sentence, identify and disambiguate semantic predicates (e.g., verbal frames), then identify and classify the frame elements (semantic roles).
+Discourse (semantics beyond individual sentences)
+Coreference resolution
+Given a sentence or larger chunk of text, determine which words ("mentions") refer to the same objects ("entities"). Anaphora resolution is a specific example of this task, and is specifically concerned with matching up pronouns with the nouns or names to which they refer. The more general task of coreference resolution also includes identifying so-called "bridging relationships" involving referring expressions. For example, in a sentence such as "He entered John's house through the front door", "the front door" is a referring expression and the bridging relationship to be identified is the fact that the door being referred to is the front door of John's house (rather than of some other structure that might also be referred to).
+Discourse analysis
+This rubric includes several related tasks. One task is discourse parsing, i.e., identifying the discourse structure of a connected text, i.e. the nature of the discourse relationships between sentences (e.g. elaboration, explanation, contrast). Another possible task is recognizing and classifying the speech acts in a chunk of text (e.g. yes-no question, content question, statement, assertion, etc.).
+Implicit semantic role labelling
+Given a single sentence, identify and disambiguate semantic predicates (e.g., verbal frames) and their explicit semantic roles in the current sentence (see Semantic role labelling above). Then, identify semantic roles that are not explicitly realized in the current sentence, classify them into arguments that are explicitly realized elsewhere in the text and those that are not specified, and resolve the former against the local text. A closely related task is zero anaphora resolution, i.e., the extension of coreference resolution to pro-drop languages.
+Recognizing textual entailment
+Given two text fragments, determine if one being true entails the other, entails the other's negation, or allows the other to be either true or false.[23]
+Topic segmentation and recognition
+Given a chunk of text, separate it into segments each of which is devoted to a topic, and identify the topic of the segment.
+Argument mining
+The goal of argument mining is the automatic extraction and identification of argumentative structures from natural language text with the aid of computer programs. [24] Such argumentative structures include the premise, conclusions, the argument scheme and the relationship between the main and subsidiary argument, or the main and counter-argument within discourse. [25][26]
+Higher-level NLP applications
+Automatic summarization (text summarization)
+Produce a readable summary of a chunk of text. Often used to provide summaries of the text of a known type, such as research papers, articles in the financial section of a newspaper.
+Book generation
+Not an NLP task proper but an extension of natural language generation and other NLP tasks is the creation of full-fledged books. The first machine-generated book was created by a rule-based system in 1984 (Racter, The policeman's beard is half-constructed).[27] The first published work by a neural network was published in 2018, 1 the Road, marketed as a novel, contains sixty million words. Both these systems are basically elaborate but non-sensical (semantics-free) language models. The first machine-generated science book was published in 2019 (Beta Writer, Lithium-Ion Batteries, Springer, Cham).[28] Unlike Racter and 1 the Road, this is grounded on factual knowledge and based on text summarization.
+Dialogue management
+Computer systems intended to converse with a human.
+Document AI
+A Document AI platform sits on top of the NLP technology enabling users with no prior experience of artificial intelligence, machine learning or NLP to quickly train a computer to extract the specific data they need from different document types. NLP-powered Document AI enables non-technical teams to quickly access information hidden in documents, for example, lawyers, business analysts and accountants.[29]
+Grammatical error correction
+Grammatical error detection and correction involves a great band-width of problems on all levels of linguistic analysis (phonology/orthography, morphology, syntax, semantics, pragmatics). Grammatical error correction is impactful since it affects hundreds of millions of people that use or acquire English as a second language. It has thus been subject to a number of shared tasks since 2011.[30][31][32] As far as orthography, morphology, syntax and certain aspects of semantics are concerned, and due to the development of powerful neural language models such as GPT-2, this can now (2019) be considered a largely solved problem and is being marketed in various commercial applications.[33]
+Machine translation
+Automatically translate text from one human language to another. This is one of the most difficult problems, and is a member of a class of problems colloquially termed "AI-complete", i.e. requiring all of the different types of knowledge that humans possess (grammar, semantics, facts about the real world, etc.) to solve properly.
+Natural language generation (NLG):
+Convert information from computer databases or semantic intents into readable human language.
+Natural language understanding (NLU)
+Convert chunks of text into more formal representations such as first-order logic structures that are easier for computer programs to manipulate. Natural language understanding involves the identification of the intended semantic from the multiple possible semantics which can be derived from a natural language expression which usually takes the form of organized notations of natural language concepts. Introduction and creation of language metamodel and ontology are efficient however empirical solutions. An explicit formalization of natural language semantics without confusions with implicit assumptions such as closed-world assumption (CWA) vs. open-world assumption, or subjective Yes/No vs. objective True/False is expected for the construction of a basis of semantics formalization.[34]
+Question answering
+Given a human-language question, determine its answer. Typical questions have a specific right answer (such as "What is the capital of Canada?"), but sometimes open-ended questions are also considered (such as "What is the meaning of life?").
+General tendencies and (possible) future directions
+Based on long-standing trends in the field, it is possible to extrapolate future directions of NLP. As of 2020, three trends among the topics of the long-standing series of CoNLL Shared Tasks can be observed:[35]
+
+Interest on increasingly abstract, "cognitive" aspects of natural language (1999-2001: shallow parsing, 2002-03: named entity recognition, 2006-09/2017-18: dependency syntax, 2004-05/2008-09 semantic role labelling, 2011-12 coreference, 2015-16: discourse parsing, 2019: semantic parsing).
+Increasing interest in multilinguality, and, potentially, multimodality (English since 1999; Spanish, Dutch since 2002; German since 2003; Bulgarian, Danish, Japanese, Portuguese, Slovenian, Swedish, Turkish since 2006; Basque, Catalan, Chinese, Greek, Hungarian, Italian, Turkish since 2007; Czech since 2009; Arabic since 2012; 2017: 40+ languages; 2018: 60+/100+ languages)
+Elimination of symbolic representations (rule-based over supervised towards weakly supervised methods, representation learning and end-to-end systems)
+Cognition and NLP
+Most more higher-level NLP applications involve aspects that emulate intelligent behaviour and apparent comprehension of natural language. More broadly speaking, the technical operationalization of increasingly advanced aspects of cognitive behaviour represents one of the developmental trajectories of NLP (see trends among CoNLL shared tasks above).
+
+Cognition refers to "the mental action or process of acquiring knowledge and understanding through thought, experience, and the senses."[36] Cognitive science is the interdisciplinary, scientific study of the mind and its processes.[37] Cognitive linguistics is an interdisciplinary branch of linguistics, combining knowledge and research from both psychology and linguistics.[38] Especially during the age of symbolic NLP, the area of computational linguistics maintained strong ties with cognitive studies.
+
+As an example, George Lakoff offers a methodology to build natural language processing (NLP) algorithms through the perspective of cognitive science, along with the findings of cognitive linguistics,[39] with two defining aspects:
+
+Apply the theory of conceptual metaphor, explained by Lakoff as “the understanding of one idea, in terms of another” which provides an idea of the intent of the author.[40] For example, consider the English word “big”. When used in a comparison (“That is a big tree”), the author's intent is to imply that the tree is ”physically large” relative to other trees or the authors experience. When used metaphorically (”Tomorrow is a big day”), the author’s intent to imply ”importance”. The intent behind other usages, like in ”She is a big person” will remain somewhat ambiguous to a person and a cognitive NLP algorithm alike without additional information.
+Assign relative measures of meaning to a word, phrase, sentence or piece of text based on the information presented before and after the piece of text being analyzed, e.g., by means of a probabilistic context-free grammar (PCFG). The mathematical equation for such algorithms is presented in US patent 9269353:
+{\displaystyle {RMM(token_{N})}={PMM(token_{N})}\times {\frac {1}{2d}}\left(\sum _{i=-d}^{d}{((PMM(token_{N-1})}\times {PF(token_{N},token_{N-1}))_{i}}\right)}{\displaystyle {RMM(token_{N})}={PMM(token_{N})}\times {\frac {1}{2d}}\left(\sum _{i=-d}^{d}{((PMM(token_{N-1})}\times {PF(token_{N},token_{N-1}))_{i}}\right)}
+Where,
+RMM, is the Relative Measure of Meaning
+token, is any block of text, sentence, phrase or word
+N, is the number of tokens being analyzed
+PMM, is the Probable Measure of Meaning based on a corpora
+d, is the location of the token along the sequence of N-1 tokens
+PF, is the Probability Function specific to a language
+Ties with cognitive linguistics are part of the historical heritage of NLP, but they have been less frequently addressed since the statistical turn during the 1990s. Nevertheless, approaches to develop cognitive models towards technically operationalizable frameworks have been pursued in the context of various frameworks, e.g., of cognitive grammar,[41] functional grammar,[42] construction grammar,[43] computational psycholinguistics and cognitive neuroscience (e.g., ACT-R), however, with limited uptake in mainstream NLP (as measured by presence on major conferences[44] of the ACL). More recently, ideas of cognitive NLP have been revived as an approach to achieve explainability, e.g., under the notion of "cognitive AI".[45] Likewise, ideas of cognitive NLP are inherent to neural models multimodal NLP (although rarely made explicit).[46]
+
+
+
+
+
+Data science is an interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from structured and unstructured data,[1][2] and apply knowledge and actionable insights from data across a broad range of application domains. Data science is related to data mining, machine learning and big data.
+
+Data science is a "concept to unify statistics, data analysis, informatics, and their related methods" in order to "understand and analyze actual phenomena" with data.[3] It uses techniques and theories drawn from many fields within the context of mathematics, statistics, computer science, information science, and domain knowledge. However, data science is different from computer science and information science. Turing Award winner Jim Gray imagined data science as a "fourth paradigm" of science (empirical, theoretical, computational, and now data-driven) and asserted that "everything about science is changing because of the impact of information technology" and the data deluge.[4][5]
+
+
+Contents
+1	Foundations
+1.1	Relationship to statistics
+2	Etymology
+2.1	Early usage
+2.2	Modern usage
+3	Impact
+4	Technologies and techniques
+4.1	Techniques
+5	References
+Foundations
+Data science is an interdisciplinary field focused on extracting knowledge from data sets, which are typically large (see big data), and applying the knowledge and actionable insights from data to solve problems in a wide range of application domains.[6] The field encompasses preparing data for analysis, formulating data science problems, analyzing data, developing data-driven solutions, and presenting findings to inform high-level decisions in a broad range of application domains. As such, it incorporates skills from computer science, statistics, information science, mathematics, information visualization, data integration, graphic design, complex systems, communication and business.[7][8] Statistician Nathan Yau, drawing on Ben Fry, also links data science to human-computer interaction: users should be able to intuitively control and explore data.[9][10] In 2015, the American Statistical Association identified database management, statistics and machine learning, and distributed and parallel systems as the three emerging foundational professional communities.[11]
+
+Relationship to statistics
+Many statisticians, including Nate Silver, have argued that data science is not a new field, but rather another name for statistics.[12] Others argue that data science is distinct from statistics because it focuses on problems and techniques unique to digital data.[13] Vasant Dhar writes that statistics emphasizes quantitative data and description. In contrast, data science deals with quantitative and qualitative data (e.g. images) and emphasizes prediction and action.[14] Andrew Gelman of Columbia University and data scientist Vincent Granville have described statistics as a nonessential part of data science.[15][16] Stanford professor David Donoho writes that data science is not distinguished from statistics by the size of datasets or use of computing, and that many graduate programs misleadingly advertise their analytics and statistics training as the essence of a data science program. He describes data science as an applied field growing out of traditional statistics.[17] In summary, data science can be therefore described as an applied branch of statistics.
+
+Etymology
+Early usage
+In 1962, John Tukey described a field he called “data analysis,” which resembles modern data science.[17] In 1985, in a lecture given to the Chinese Academy of Sciences in Beijing, C.F. Jeff Wu used the term Data Science for the first time as an alternative name for statistics.[18] Later, attendees at a 1992 statistics symposium at the University of Montpellier II acknowledged the emergence of a new discipline focused on data of various origins and forms, combining established concepts and principles of statistics and data analysis with computing.[19][20]
+
+The term “data science” has been traced back to 1974, when Peter Naur proposed it as an alternative name for computer science.[21] In 1996, the International Federation of Classification Societies became the first conference to specifically feature data science as a topic.[21] However, the definition was still in flux. After the 1985 lecture in the Chinese Academy of Sciences in Beijing, in 1997 C.F. Jeff Wu again suggested that statistics should be renamed data science. He reasoned that a new name would help statistics shed inaccurate stereotypes, such as being synonymous with accounting, or limited to describing data.[22] In 1998, Hayashi Chikio argued for data science as a new, interdisciplinary concept, with three aspects: data design, collection, and analysis.[20]
+
+During the 1990s, popular terms for the process of finding patterns in datasets (which were increasingly large) included “knowledge discovery” and “data mining”.[23][21]
+
+Modern usage
+The modern conception of data science as an independent discipline is sometimes attributed to William S. Cleveland.[24] In a 2001 paper, he advocated an expansion of statistics beyond theory into technical areas; because this would significantly change the field, it warranted a new name.[23] "Data science" became more widely used in the next few years: in 2002, the Committee on Data for Science and Technology launched Data Science Journal. In 2003, Columbia University launched The Journal of Data Science.[23] In 2014, the American Statistical Association's Section on Statistical Learning and Data Mining changed its name to the Section on Statistical Learning and Data Science, reflecting the ascendant popularity of data science.[25]
+
+The professional title of “data scientist” has been attributed to DJ Patil and Jeff Hammerbacher in 2008.[26] Though it was used by the National Science Board in their 2005 report, "Long-Lived Digital Data Collections: Enabling Research and Education in the 21st Century," it referred broadly to any key role in managing a digital data collection.[27]
+
+There is still no consensus on the definition of data science and it is considered by some to be a buzzword.[28]
+
+Impact
+Big data is very quickly becoming a vital tool for businesses and companies of all sizes.[29] The availability and interpretation of big data has altered the business models of old industries and enabled the creation of new ones.[29] Data-driven businesses are worth $1.2 trillion collectively in 2020, an increase from $333 billion in the year 2015.[30] Data scientists are responsible for breaking down big data into usable information and creating software and algorithms that help companies and organizations determine optimal operations.[30] As big data continues to have a major impact on the world, data science does as well due to the close relationship between the two.[30]
+
+Technologies and techniques
+There are a variety of different technologies and techniques that are used for data science which depend on the application. More recently, full-featured, end-to-end platforms have been developed and heavily used for data science and machine learning.
+
+Techniques
+Further information: Statistics § Methods
+Linear Regression
+Logistic Regression
+Decision tree is used as prediction models for classification and data fitting. The decision tree structure can be used to generate rules able to classify or predict target/class/label variable based on the observation attributes.
+Support Vector Machine (SVM)
+Clustering is a technique used to group data together.
+Dimensionality reduction is used to reduce the complexity of data computation so that it can be performed more quickly.
+Machine learning is a technique used to perform tasks by inferencing patterns from data
+
+
+
+
+The Internet of things (IoT) describes the network of physical objects—a.k.a. "things"—that are embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the Internet.[1][2][3][4]
+
+Things have evolved due to the convergence of multiple technologies, real-time analytics, machine learning, commodity sensors, and embedded systems.[1] Traditional fields of embedded systems, wireless sensor networks, control systems, automation (including home and building automation), and others all contribute to enabling the Internet of things. In the consumer market, IoT technology is most synonymous with products pertaining to the concept of the "smart home", including devices and appliances (such as lighting fixtures, thermostats, home security systems and cameras, and other home appliances) that support one or more common ecosystems, and can be controlled via devices associated with that ecosystem, such as smartphones and smart speakers. The IoT can also be used in healthcare systems.[5]
+
+There are a number of serious concerns about dangers in the growth of the IoT, especially in the areas of privacy and security, and consequently industry and governmental moves to address these concerns have begun including the development of international standards.
+
+
+Contents
+1	History
+2	Applications
+2.1	Consumer applications
+2.1.1	Smart home
+2.1.2	Elder care
+2.2	Organizational applications
+2.2.1	Medical and healthcare
+2.2.2	Transportation
+2.2.3	V2X communications
+2.2.4	Building and home automation
+2.3	Industrial applications
+2.3.1	Manufacturing
+2.3.2	Agriculture
+2.3.3	Maritime
+2.4	Infrastructure applications
+2.4.1	Metropolitan scale deployments
+2.4.2	Energy management
+2.4.3	Environmental monitoring
+2.5	Military applications
+2.5.1	Internet of Battlefield Things
+2.5.2	Ocean of Things
+2.6	Product digitisation
+3	Trends and characteristics
+3.1	Intelligence
+3.2	Architecture
+3.2.1	Network architecture
+3.3	Complexity
+3.4	Size considerations
+3.5	Space considerations
+3.6	A solution to "basket of remotes"
+4	Enabling technologies for IoT
+4.1	Addressability
+4.2	Application Layer
+4.3	Short-range wireless
+4.4	Medium-range wireless
+4.5	Long-range wireless
+4.6	Wired
+4.7	Standards and standards organizations
+5	Politics and civic engagement
+6	Government regulation on IoT
+7	Criticism, problems and controversies
+7.1	Platform fragmentation
+7.2	Privacy, autonomy, and control
+7.3	Data storage
+7.4	Security
+7.5	Safety
+7.6	Design
+7.7	Environmental sustainability impact
+7.8	Intentional obsolescence of devices
+7.9	Confusing terminology
+8	IoT adoption barriers
+8.1	Lack of interoperability and unclear value propositions
+8.2	Privacy and security concerns
+8.3	Traditional governance structure
+8.4	Business planning and project management
+9	See also
+10	References
+11	Bibliography
+History
+The main concept of a network of smart devices was discussed as early as 1982, with a modified Coca-Cola vending machine at Carnegie Mellon University becoming the first ARPANET-connected appliance,[6] able to report its inventory and whether newly loaded drinks were cold or not.[7] Mark Weiser's 1991 paper on ubiquitous computing, "The Computer of the 21st Century", as well as academic venues such as UbiComp and PerCom produced the contemporary vision of the IOT.[8][9] In 1994, Reza Raji described the concept in IEEE Spectrum as "[moving] small packets of data to a large set of nodes, so as to integrate and automate everything from home appliances to entire factories".[10] Between 1993 and 1997, several companies proposed solutions like Microsoft's at Work or Novell's NEST. The field gained momentum when Bill Joy envisioned device-to-device communication as a part of his "Six Webs" framework, presented at the World Economic Forum at Davos in 1999.[11]
+
+The term "Internet of things" was coined by Kevin Ashton of Procter & Gamble, later MIT's Auto-ID Center, in 1999,[12] though he prefers the phrase "Internet for things".[13] At that point, he viewed radio-frequency identification (RFID) as essential to the Internet of things,[14] which would allow computers to manage all individual things.[15][16][17]The main theme of the Internet of Things is to embed short-range mobile transceivers in various gadgets and daily necessities to enable new forms of communication between people and things, and between things themselves.[18]
+
+Defining the Internet of things as "simply the point in time when more 'things or objects' were connected to the Internet than people", Cisco Systems estimated that the IoT was "born" between 2008 and 2009, with the things/people ratio growing from 0.08 in 2003 to 1.84 in 2010.[19]
+
+Applications
+The extensive set of applications for IoT devices[20] is often divided into consumer, commercial, industrial, and infrastructure spaces.[21][22]
+
+Consumer applications
+A growing portion of IoT devices are created for consumer use, including connected vehicles, home automation, wearable technology, connected health, and appliances with remote monitoring capabilities.[23]
+
+Smart home
+IoT devices are a part of the larger concept of home automation, which can include lighting, heating and air conditioning, media and security systems and camera systems.[24][25] Long-term benefits could include energy savings by automatically ensuring lights and electronics are turned off or by making the residents in the home aware of usage.[26]
+
+A smart home or automated home could be based on a platform or hubs that control smart devices and appliances.[27] For instance, using Apple's HomeKit, manufacturers can have their home products and accessories controlled by an application in iOS devices such as the iPhone and the Apple Watch.[28][29] This could be a dedicated app or iOS native applications such as Siri.[30] This can be demonstrated in the case of Lenovo's Smart Home Essentials, which is a line of smart home devices that are controlled through Apple's Home app or Siri without the need for a Wi-Fi bridge.[30] There are also dedicated smart home hubs that are offered as standalone platforms to connect different smart home products and these include the Amazon Echo, Google Home, Apple's HomePod, and Samsung's SmartThings Hub.[31] In addition to the commercial systems, there are many non-proprietary, open source ecosystems; including Home Assistant, OpenHAB and Domoticz.[32][33]
+
+Elder care
+One key application of a smart home is to provide assistance for those with disabilities and elderly individuals. These home systems use assistive technology to accommodate an owner's specific disabilities.[34] Voice control can assist users with sight and mobility limitations while alert systems can be connected directly to cochlear implants worn by hearing-impaired users.[35] They can also be equipped with additional safety features. These features can include sensors that monitor for medical emergencies such as falls or seizures.[36] Smart home technology applied in this way can provide users with more freedom and a higher quality of life.[34]
+
+The term "Enterprise IoT" refers to devices used in business and corporate settings. By 2019, it is estimated that the EIoT will account for 9.1 billion devices.[21]
+
+Organizational applications
+Medical and healthcare
+The Internet of Medical Things (IoMT) is an application of the IoT for medical and health related purposes, data collection and analysis for research, and monitoring.[37][38][39][40][41] The IoMT has been referenced as "Smart Healthcare",[42] as the technology for creating a digitized healthcare system, connecting available medical resources and healthcare services.[43][44]
+
+IoT devices can be used to enable remote health monitoring and emergency notification systems. These health monitoring devices can range from blood pressure and heart rate monitors to advanced devices capable of monitoring specialized implants, such as pacemakers, Fitbit electronic wristbands, or advanced hearing aids.[45] Some hospitals have begun implementing "smart beds" that can detect when they are occupied and when a patient is attempting to get up. It can also adjust itself to ensure appropriate pressure and support is applied to the patient without the manual interaction of nurses.[37] A 2015 Goldman Sachs report indicated that healthcare IoT devices "can save the United States more than $300 billion in annual healthcare expenditures by increasing revenue and decreasing cost."[46] Moreover, the use of mobile devices to support medical follow-up led to the creation of 'm-health', used analyzed health statistics." [47]
+
+Specialized sensors can also be equipped within living spaces to monitor the health and general well-being of senior citizens, while also ensuring that proper treatment is being administered and assisting people regain lost mobility via therapy as well.[48] These sensors create a network of intelligent sensors that are able to collect, process, transfer, and analyze valuable information in different environments, such as connecting in-home monitoring devices to hospital-based systems.[42] Other consumer devices to encourage healthy living, such as connected scales or wearable heart monitors, are also a possibility with the IoT.[49] End-to-end health monitoring IoT platforms are also available for antenatal and chronic patients, helping one manage health vitals and recurring medication requirements.[50]
+
+Advances in plastic and fabric electronics fabrication methods have enabled ultra-low cost, use-and-throw IoMT sensors. These sensors, along with the required RFID electronics, can be fabricated on paper or e-textiles for wireless powered disposable sensing devices.[51] Applications have been established for point-of-care medical diagnostics, where portability and low system-complexity is essential.[52]
+
+As of 2018 IoMT was not only being applied in the clinical laboratory industry,[39] but also in the healthcare and health insurance industries. IoMT in the healthcare industry is now permitting doctors, patients, and others, such as guardians of patients, nurses, families, and similar, to be part of a system, where patient records are saved in a database, allowing doctors and the rest of the medical staff to have access to patient information.[53] Moreover, IoT-based systems are patient-centered, which involves being flexible to the patient's medical conditions.[citation needed] IoMT in the insurance industry provides access to better and new types of dynamic information. This includes sensor-based solutions such as biosensors, wearables, connected health devices, and mobile apps to track customer behavior. This can lead to more accurate underwriting and new pricing models.[54]
+
+The application of the IoT in healthcare plays a fundamental role in managing chronic diseases and in disease prevention and control. Remote monitoring is made possible through the connection of powerful wireless solutions. The connectivity enables health practitioners to capture patient's data and applying complex algorithms in health data analysis.[55]
+
+Transportation
+
+Digital variable speed-limit sign
+The IoT can assist in the integration of communications, control, and information processing across various transportation systems. Application of the IoT extends to all aspects of transportation systems (i.e. the vehicle,[56] the infrastructure, and the driver or user). Dynamic interaction between these components of a transport system enables inter- and intra-vehicular communication,[57] smart traffic control, smart parking, electronic toll collection systems, logistics and fleet management, vehicle control, safety, and road assistance.[45][58]
+
+V2X communications
+Main article: V2X
+In vehicular communication systems, vehicle-to-everything communication (V2X), consists of three main components: vehicle to vehicle communication (V2V), vehicle to infrastructure communication (V2I) and vehicle to pedestrian communications (V2P). V2X is the first step to autonomous driving and connected road infrastructure.[citation needed][59]
+
+Building and home automation
+IoT devices can be used to monitor and control the mechanical, electrical and electronic systems used in various types of buildings (e.g., public and private, industrial, institutions, or residential)[45] in home automation and building automation systems. In this context, three main areas are being covered in literature:[60]
+
+The integration of the Internet with building energy management systems in order to create energy-efficient and IOT-driven "smart buildings".[60]
+The possible means of real-time monitoring for reducing energy consumption[26] and monitoring occupant behaviors.[60]
+The integration of smart devices in the built environment and how they might be used in future applications.[60]
+Industrial applications
+Main article: Industrial internet of things
+Also known as IIoT, industrial IoT devices acquire and analyze data from connected equipment, operational technology (OT), locations, and people. Combined with operational technology (OT) monitoring devices, IIoT helps regulate and monitor industrial systems. Also, the same implementation can be carried out for automated record updates of asset placement in industrial storage units as the size of the assets can vary from a small screw to the whole motor spare part, and misplacement of such assets can cause a percentile loss of manpower time and money.
+
+Manufacturing
+The IoT can connect various manufacturing devices equipped with sensing, identification, processing, communication, actuation, and networking capabilities.[61] Network control and management of manufacturing equipment, asset and situation management, or manufacturing process control allow IoT to be used for industrial applications and smart manufacturing.[62] IoT intelligent systems enable rapid manufacturing and optimization of new products, and rapid response to product demands.[45]
+
+Digital control systems to automate process controls, operator tools and service information systems to optimize plant safety and security are within the purview of the IIoT.[63] IoT can also be applied to asset management via predictive maintenance, statistical evaluation, and measurements to maximize reliability.[64] Industrial management systems can be integrated with smart grids, enabling energy optimization. Measurements, automated controls, plant optimization, health and safety management, and other functions are provided by networked sensors.[45]
+
+Agriculture
+There are numerous IoT applications in farming[65] such as collecting data on temperature, rainfall, humidity, wind speed, pest infestation, and soil content. This data can be used to automate farming techniques, take informed decisions to improve quality and quantity, minimise risk and waste, and reduce effort required to manage crops. For example, farmers can now monitor soil temperature and moisture from afar, and even apply IoT-acquired data to precision fertilisation programs.[66]
+
+In August 2018, Toyota Tsusho began a partnership with Microsoft to create fish farming tools using the Microsoft Azure application suite for IoT technologies related to water management. Developed in part by researchers from Kindai University, the water pump mechanisms use artificial intelligence to count the number of fish on a conveyor belt, analyze the number of fish, and deduce the effectiveness of water flow from the data the fish provide. The specific computer programs used in the process fall under the Azure Machine Learning and the Azure IoT Hub platforms.[67]
+
+Maritime
+IoT devices are in use monitoring the environments and systems of boats and yachts.[68] Many pleasure boats are left unattended for days in summer, and months in winter so such devices provide valuable early alert of boat flooding, fire, and deep discharge of batteries. The use of global internet data networks such as Sigfox, combined with long-life batteries, and microelectronics allows the engine rooms, bilge, and batteries to be constantly monitored and reported to a connected Android & Apple applications for example.
+
+Infrastructure applications
+Monitoring and controlling operations of sustainable urban and rural infrastructures like bridges, railway tracks and on- and offshore wind-farms is a key application of the IoT.[63] The IoT infrastructure can be used for monitoring any events or changes in structural conditions that can compromise safety and increase risk. The IoT can benefit the construction industry by cost-saving, time reduction, better quality workday, paperless workflow and increase in productivity. It can help in taking faster decisions and save money with Real-Time Data Analytics. It can also be used for scheduling repair and maintenance activities in an efficient manner, by coordinating tasks between different service providers and users of these facilities.[45] IoT devices can also be used to control critical infrastructure like bridges to provide access to ships. Usage of IoT devices for monitoring and operating infrastructure is likely to improve incident management and emergency response coordination, and quality of service, up-times and reduce costs of operation in all infrastructure related areas.[69] Even areas such as waste management can benefit[70] from automation and optimization that could be brought in by the IoT.[citation needed]
+
+Metropolitan scale deployments
+There are several planned or ongoing large-scale deployments of the IoT, to enable better management of cities and systems. For example, Songdo, South Korea, the first of its kind fully equipped and wired smart city, is gradually being built, with approximately 70 percent of the business district completed as of June 2018. Much of the city is planned to be wired and automated, with little or no human intervention.[71][72]
+
+Another application is currently undergoing a project in Santander, Spain. For this deployment, two approaches have been adopted. This city of 180,000 inhabitants has already seen 18,000 downloads of its city smartphone app. The app is connected to 10,000 sensors that enable services like parking search, environmental monitoring, digital city agenda, and more. City context information is used in this deployment so as to benefit merchants through a spark deals mechanism based on city behavior that aims at maximizing the impact of each notification.[73]
+
+Other examples of large-scale deployments underway include the Sino-Singapore Guangzhou Knowledge City;[74] work on improving air and water quality, reducing noise pollution, and increasing transportation efficiency in San Jose, California;[75] and smart traffic management in western Singapore.[76] Using its RPMA (Random Phase Multiple Access) technology, San Diego-based Ingenu has built a nationwide public network[77] for low-bandwidth data transmissions using the same unlicensed 2.4 gigahertz spectrum as Wi-Fi. Ingenu's "Machine Network" covers more than a third of the US population across 35 major cities including San Diego and Dallas.[78] French company, Sigfox, commenced building an Ultra Narrowband wireless data network in the San Francisco Bay Area in 2014, the first business to achieve such a deployment in the U.S.[79][80] It subsequently announced it would set up a total of 4000 base stations to cover a total of 30 cities in the U.S. by the end of 2016, making it the largest IoT network coverage provider in the country thus far.[81][82] Cisco also participates in smart cities projects. Cisco has started deploying technologies for Smart Wi-Fi, Smart Safety & Security, Smart Lighting, Smart Parking, Smart Transports, Smart Bus Stops, Smart Kiosks, Remote Expert for Government Services (REGS) and Smart Education in the five km area in the city of Vijaywada.[83]
+
+Another example of a large deployment is the one completed by New York Waterways in New York City to connect all the city's vessels and be able to monitor them live 24/7. The network was designed and engineered by Fluidmesh Networks, a Chicago-based company developing wireless networks for critical applications. The NYWW network is currently providing coverage on the Hudson River, East River, and Upper New York Bay. With the wireless network in place, NY Waterway is able to take control of its fleet and passengers in a way that was not previously possible. New applications can include security, energy and fleet management, digital signage, public Wi-Fi, paperless ticketing and others.[84]
+
+Energy management
+Significant numbers of energy-consuming devices (e.g. lamps, household appliances, motors, pumps, etc.) already integrate Internet connectivity, which can allow them to communicate with utilities not only to balance power generation but also helps optimize the energy consumption as a whole.[45] These devices allow for remote control by users, or central management via a cloud-based interface, and enable functions like scheduling (e.g., remotely powering on or off heating systems, controlling ovens, changing lighting conditions etc.).[45] The smart grid is a utility-side IoT application; systems gather and act on energy and power-related information to improve the efficiency of the production and distribution of electricity.[85] Using advanced metering infrastructure (AMI) Internet-connected devices, electric utilities not only collect data from end-users, but also manage distribution automation devices like transformers.[45]
+
+Environmental monitoring
+Environmental monitoring applications of the IoT typically use sensors to assist in environmental protection[86] by monitoring air or water quality,[87] atmospheric or soil conditions,[88] and can even include areas like monitoring the movements of wildlife and their habitats.[89] Development of resource-constrained devices connected to the Internet also means that other applications like earthquake or tsunami early-warning systems can also be used by emergency services to provide more effective aid. IoT devices in this application typically span a large geographic area and can also be mobile.[45] It has been argued that the standardization IoT brings to wireless sensing will revolutionize this area.[90]
+
+Living Lab
+
+Another example of integrating the IoT is Living Lab which integrates and combines research and innovation process, establishing within a public-private-people-partnership.[91] There are currently 320 Living Labs that use the IoT to collaborate and share knowledge between stakeholders to co-create innovative and technological products. For companies to implement and develop IoT services for smart cities, they need to have incentives. The governments play key roles in smart city projects as changes in policies will help cities to implement the IoT which provides effectiveness, efficiency, and accuracy of the resources that are being used. For instance, the government provides tax incentives and cheap rent, improves public transports, and offers an environment where start-up companies, creative industries, and multinationals may co-create, share a common infrastructure and labor markets, and take advantage of locally embedded technologies, production process, and transaction costs.[91] The relationship between the technology developers and governments who manage the city's assets, is key to provide open access to resources to users in an efficient way.
+
+Military applications
+Main article: Internet of Military Things
+The Internet of Military Things (IoMT) is the application of IoT technologies in the military domain for the purposes of reconnaissance, surveillance, and other combat-related objectives. It is heavily influenced by the future prospects of warfare in an urban environment and involves the use of sensors, munitions, vehicles, robots, human-wearable biometrics, and other smart technology that is relevant on the battlefield.[92]
+
+Internet of Battlefield Things
+The Internet of Battlefield Things (IoBT) is a project initiated and executed by the U.S. Army Research Laboratory (ARL) that focuses on the basic science related to the IoT that enhance the capabilities of Army soldiers.[93] In 2017, ARL launched the Internet of Battlefield Things Collaborative Research Alliance (IoBT-CRA), establishing a working collaboration between industry, university, and Army researchers to advance the theoretical foundations of IoT technologies and their applications to Army operations.[94][95]
+
+Ocean of Things
+The Ocean of Things project is a DARPA-led program designed to establish an Internet of Things across large ocean areas for the purposes of collecting, monitoring, and analyzing environmental and vessel activity data. The project entails the deployment of about 50,000 floats that house a passive sensor suite that autonomously detect and track military and commercial vessels as part of a cloud-based network.[96]
+
+Product digitisation
+There are several applications of smart or active packaging in which a QR code or NFC tag is affixed on a product or its packaging. The tag itself is passive, however it contains a unique identifier (typically a URL) which enables a user to access digital content about the product via a smartphone.[97] Strictly speaking, such passive items are not part of the Internet of Thing but they can be seen as enablers of digital interactions.[98] The term "Internet of Packaging" has been coined to describe applications in which unique identifiers are used, to automate supply chains, and are scanned on large scale by consumers to access digital content.[99] Authentication of the unique identifiers, and thereby of the product itself, is possible via a copy-sensitive digital watermark or copy detection pattern for scanning when scanning a QR code,[100] while NFC tags can encrypt communication.[101]
+
+Trends and characteristics
+The IoT's major significant trend in recent years is the explosive growth of devices connected and controlled by the Internet.[102] The wide range of applications for IoT technology mean that the specifics can be very different from one device to the next but there are basic characteristics shared by most.
+
+The IoT creates opportunities for more direct integration of the physical world into computer-based systems, resulting in efficiency improvements, economic benefits, and reduced human exertions.[103][104][105][106]
+
+The number of IoT devices increased 31% year-over-year to 8.4 billion in the year 2017[107] and it is estimated that there will be 30 billion devices by 2020.[102] The global market value of the IoT is projected to reach $7.1 trillion by 2020.[108]
+
+Intelligence
+Ambient intelligence and autonomous control are not part of the original concept of the Internet of things. Ambient intelligence and autonomous control do not necessarily require Internet structures, either. However, there is a shift in research (by companies such as Intel) to integrate the concepts of the IoT and autonomous control, with initial outcomes towards this direction considering objects as the driving force for autonomous IoT.[109] A promising approach in this context is deep reinforcement learning where most of IoT systems provide a dynamic and interactive environment.[110] Training an agent (i.e., IoT device) to behave smartly in such an environment cannot be addressed by conventional machine learning algorithms such as supervised learning. By reinforcement learning approach, a learning agent can sense the environment's state (e.g., sensing home temperature), perform actions (e.g., turn HVAC on or off) and learn through the maximizing accumulated rewards it receives in long term.
+
+IoT intelligence can be offered at three levels: IoT devices, Edge/Fog nodes, and Cloud computing.[111] The need for intelligent control and decision at each level depends on the time sensitiveness of the IoT application. For example, an autonomous vehicle's camera needs to make real-time obstacle detection to avoid an accident. This fast decision making would not be possible through transferring data from the vehicle to cloud instances and return the predictions back to the vehicle. Instead, all the operation should be performed locally in the vehicle. Integrating advanced machine learning algorithms including deep learning into IoT devices is an active research area to make smart objects closer to reality. Moreover, it is possible to get the most value out of IoT deployments through analyzing IoT data, extracting hidden information, and predicting control decisions. A wide variety of machine learning techniques have been used in IoT domain ranging from traditional methods such as regression, support vector machine, and random forest to advanced ones such as convolutional neural networks, LSTM, and variational autoencoder.[112][111]
+
+In the future, the Internet of Things may be a non-deterministic and open network in which auto-organized or intelligent entities (web services, SOA components) and virtual objects (avatars) will be interoperable and able to act independently (pursuing their own objectives or shared ones) depending on the context, circumstances or environments. Autonomous behavior through the collection and reasoning of context information as well as the object's ability to detect changes in the environment (faults affecting sensors) and introduce suitable mitigation measures constitutes a major research trend,[113] clearly needed to provide credibility to the IoT technology. Modern IoT products and solutions in the marketplace use a variety of different technologies to support such context-aware automation, but more sophisticated forms of intelligence are requested to permit sensor units and intelligent cyber-physical systems to be deployed in real environments.[114]
+
+Architecture
+
+This section needs attention from an expert in technology. The specific problem is: The information is partially outdated, unclear, and uncited. Requires more details, but not so technical that others won't understand it.. WikiProject Technology may be able to help recruit an expert. (July 2018)
+IoT system architecture, in its simplistic view, consists of three tiers: Tier 1: Devices, Tier 2: the Edge Gateway, and Tier 3: the Cloud.[115] Devices include networked things, such as the sensors and actuators found in IIoT equipment, particularly those that use protocols such as Modbus, Bluetooth, Zigbee, or proprietary protocols, to connect to an Edge Gateway.[115] The Edge Gateway layer consists of sensor data aggregation systems called Edge Gateways that provide functionality, such as pre-processing of the data, securing connectivity to cloud, using systems such as WebSockets, the event hub, and, even in some cases, edge analytics or fog computing.[115] Edge Gateway layer is also required to give a common view of the devices to the upper layers to facilitate in easier management. The final tier includes the cloud application built for IIoT using the microservices architecture, which are usually polyglot and inherently secure in nature using HTTPS/OAuth. It includes various database systems that store sensor data, such as time series databases or asset stores using backend data storage systems (e.g. Cassandra, PostgreSQL).[115] The cloud tier in most cloud-based IoT system features event queuing and messaging system that handles communication that transpires in all tiers.[116] Some experts classified the three-tiers in the IIoT system as edge, platform, and enterprise and these are connected by proximity network, access network, and service network, respectively.[117]
+
+Building on the Internet of things, the web of things is an architecture for the application layer of the Internet of things looking at the convergence of data from IoT devices into Web applications to create innovative use-cases. In order to program and control the flow of information in the Internet of things, a predicted architectural direction is being called BPM Everywhere which is a blending of traditional process management with process mining and special capabilities to automate the control of large numbers of coordinated devices.[citation needed]
+
+Network architecture
+The Internet of things requires huge scalability in the network space to handle the surge of devices.[118] IETF 6LoWPAN would be used to connect devices to IP networks. With billions of devices[119] being added to the Internet space, IPv6 will play a major role in handling the network layer scalability. IETF's Constrained Application Protocol, ZeroMQ, and MQTT would provide lightweight data transport.
+
+Fog computing is a viable alternative to prevent such a large burst of data flow through the Internet.[120] The edge devices' computation power to analyse and process data is extremely limited. Limited processing power is a key attribute of IoT devices as their purpose is to supply data about physical objects while remaining autonomous. Heavy processing requirements use more battery power harming IoT's ability to operate. Scalability is easy because IoT devices simply supply data through the internet to a server with sufficient processing power.[121]
+
+Complexity
+In semi-open or closed loops (i.e. value chains, whenever a global finality can be settled) the IoT will often be considered and studied as a complex system[122] due to the huge number of different links, interactions between autonomous actors, and its capacity to integrate new actors. At the overall stage (full open loop) it will likely be seen as a chaotic environment (since systems always have finality). As a practical approach, not all elements in the Internet of things run in a global, public space. Subsystems are often implemented to mitigate the risks of privacy, control and reliability. For example, domestic robotics (domotics) running inside a smart home might only share data within and be available via a local network.[123] Managing and controlling a high dynamic ad hoc IoT things/devices network is a tough task with the traditional networks architecture, Software Defined Networking (SDN) provides the agile dynamic solution that can cope with the special requirements of the diversity of innovative IoT applications.[124]
+
+Size considerations
+The Internet of things would encode 50 to 100 trillion objects, and be able to follow the movement of those objects. Human beings in surveyed urban environments are each surrounded by 1000 to 5000 trackable objects.[125] In 2015 there were already 83 million smart devices in people's homes. This number is expected to grow to 193 million devices by 2020.[25][126]
+
+The figure of online capable devices grew 31% from 2016 to 2017 to reach 8.4 billion.[107]
+
+Space considerations
+In the Internet of Things, the precise geographic location of a thing—and also the precise geographic dimensions of a thing—will be critical.[127] Therefore, facts about a thing, such as its location in time and space, have been less critical to track because the person processing the information can decide whether or not that information was important to the action being taken, and if so, add the missing information (or decide to not take the action). (Note that some things in the Internet of Things will be sensors, and sensor location is usually important.[128]) The GeoWeb and Digital Earth are promising applications that become possible when things can become organized and connected by location. However, the challenges that remain include the constraints of variable spatial scales, the need to handle massive amounts of data, and an indexing for fast search and neighbour operations. In the Internet of Things, if things are able to take actions on their own initiative, this human-centric mediation role is eliminated. Thus, the time-space context that we as humans take for granted must be given a central role in this information ecosystem. Just as standards play a key role in the Internet and the Web, geo-spatial standards will play a key role in the Internet of things.[129][130]
+
+A solution to "basket of remotes"
+Many IoT devices have the potential to take a piece of this market. Jean-Louis Gassée (Apple initial alumni team, and BeOS co-founder) has addressed this topic in an article on Monday Note,[131] where he predicts that the most likely problem will be what he calls the "basket of remotes" problem, where we'll have hundreds of applications to interface with hundreds of devices that don't share protocols for speaking with one another.[131] For improved user interaction, some technology leaders are joining forces to create standards for communication between devices to solve this problem. Others are turning to the concept of predictive interaction of devices, "where collected data is used to predict and trigger actions on the specific devices" while making them work together.[132]
+
+Enabling technologies for IoT
+There are many technologies that enable the IoT. Crucial to the field is the network used to communicate between devices of an IoT installation, a role that several wireless or wired technologies may fulfill:[133][134][135]
+
+Addressability
+The original idea of the Auto-ID Center is based on RFID-tags and distinct identification through the Electronic Product Code. This has evolved into objects having an IP address or URI.[136] An alternative view, from the world of the Semantic Web[137] focuses instead on making all things (not just those electronic, smart, or RFID-enabled) addressable by the existing naming protocols, such as URI. The objects themselves do not converse, but they may now be referred to by other agents, such as powerful centralised servers acting for their human owners.[138] Integration with the Internet implies that devices will use an IP address as a distinct identifier. Due to the limited address space of IPv4 (which allows for 4.3 billion different addresses), objects in the IoT will have to use the next generation of the Internet protocol (IPv6) to scale to the extremely large address space required.[139][140][141] Internet-of-things devices additionally will benefit from the stateless address auto-configuration present in IPv6,[142] as it reduces the configuration overhead on the hosts,[140] and the IETF 6LoWPAN header compression. To a large extent, the future of the Internet of things will not be possible without the support of IPv6; and consequently, the global adoption of IPv6 in the coming years will be critical for the successful development of the IoT in the future.[141]
+
+Application Layer
+ADRC[143] defines an application layer protocol and supporting framework for implementing IoT applications.
+Short-range wireless
+Bluetooth mesh networking – Specification providing a mesh networking variant to Bluetooth low energy (BLE) with an increased number of nodes and standardized application layer (Models).
+Light-Fidelity (Li-Fi) – Wireless communication technology similar to the Wi-Fi standard, but using visible light communication for increased bandwidth.
+Near-field communication (NFC) – Communication protocols enabling two electronic devices to communicate within a 4 cm range.
+Radio-frequency identification (RFID) – Technology using electromagnetic fields to read data stored in tags embedded in other items.
+Wi-Fi – Technology for local area networking based on the IEEE 802.11 standard, where devices may communicate through a shared access point or directly between individual devices.
+ZigBee – Communication protocols for personal area networking based on the IEEE 802.15.4 standard, providing low power consumption, low data rate, low cost, and high throughput.
+Z-Wave – Wireless communications protocol used primarily for home automation and security applications
+Medium-range wireless
+LTE-Advanced – High-speed communication specification for mobile networks. Provides enhancements to the LTE standard with extended coverage, higher throughput, and lower latency.
+5G - 5G wireless networks can be used to achieve the high communication requirements of the IoT and connect a large number of IoT devices, even when they are on the move.[144]
+Long-range wireless
+Low-power wide-area networking (LPWAN) – Wireless networks designed to allow long-range communication at a low data rate, reducing power and cost for transmission. Available LPWAN technologies and protocols: LoRaWan, Sigfox, NB-IoT, Weightless, RPMA.
+Very small aperture terminal (VSAT) – Satellite communication technology using small dish antennas for narrowband and broadband data.
+Wired
+Ethernet – General purpose networking standard using twisted pair and fiber optic links in conjunction with hubs or switches.
+Power-line communication (PLC) – Communication technology using electrical wiring to carry power and data. Specifications such as HomePlug or G.hn utilize PLC for networking IoT devices.
+Standards and standards organizations
+[icon]	
+This section needs expansion. You can help by adding to it. (September 2016)
+This is a list of technical standards for the IoT, most of which are open standards, and the standards organizations that aspire to successfully setting them.[145][146]
+
+Short name	Long name	Standards under development	Other notes
+Auto-ID Labs	Auto Identification Center	Networked RFID (radiofrequency identification) and emerging sensing technologies	
+Connected Home over IP	Project Connected Home over IP	Connected Home over IP (or Project Connected Home over IP) is an open-sourced, royalty-free home automation connectivity standard project which features compatibility among different smart home and Internet of things (IoT) products and software	The Connected Home over IP project group was launched and introduced by Amazon, Apple, Google,[147] Comcast and the Zigbee Alliance in December 18, 2019.[148] The project is backed by big companies and by being based on proven Internet design principles and protocols it aims to unify the currently fragmented systems.[149]
+EPCglobal	Electronic Product code Technology	Standards for adoption of EPC (Electronic Product Code) technology	
+FDA	U.S. Food and Drug Administration	UDI (Unique Device Identification) system for distinct identifiers for medical devices	
+GS1	Global Standards One	Standards for UIDs ("unique" identifiers) and RFID of fast-moving consumer goods (consumer packaged goods), health care supplies, and other things
+The GS1 digital link standard,[150] first released in August 2018, allows the use QR Codes, GS1 Datamatrix, RFID and NFC to enable various types of business-to-business, as well as business-to-consumers interactions.
+
+Parent organization comprises member organizations such as GS1 US
+IEEE	Institute of Electrical and Electronics Engineers	Underlying communication technology standards such as IEEE 802.15.4, IEEE P1451-99 (IoT Harmonization), and IEEE P1931.1 (ROOF Computing).	
+IETF	Internet Engineering Task Force	Standards that comprise TCP/IP (the Internet protocol suite)	
+MTConnect Institute	—	MTConnect is a manufacturing industry standard for data exchange with machine tools and related industrial equipment. It is important to the IIoT subset of the IoT.	
+O-DF	Open Data Format	O-DF is a standard published by the Internet of Things Work Group of The Open Group in 2014, which specifies a generic information model structure that is meant to be applicable for describing any "Thing", as well as for publishing, updating and querying information when used together with O-MI (Open Messaging Interface).	
+O-MI	Open Messaging Interface	O-MI is a standard published by the Internet of Things Work Group of The Open Group in 2014, which specifies a limited set of key operations needed in IoT systems, notably different kinds of subscription mechanisms based on the Observer pattern.	
+OCF	Open Connectivity Foundation	Standards for simple devices using CoAP (Constrained Application Protocol)	OCF (Open Connectivity Foundation) supersedes OIC (Open Interconnect Consortium)
+OMA	Open Mobile Alliance	OMA DM and OMA LWM2M for IoT device management, as well as GotAPI, which provides a secure framework for IoT applications	
+XSF	XMPP Standards Foundation	Protocol extensions of XMPP (Extensible Messaging and Presence Protocol), the open standard of instant messaging	
+Politics and civic engagement
+Some scholars and activists argue that the IoT can be used to create new models of civic engagement if device networks can be open to user control and inter-operable platforms. Philip N. Howard, a professor and author, writes that political life in both democracies and authoritarian regimes will be shaped by the way the IoT will be used for civic engagement. For that to happen, he argues that any connected device should be able to divulge a list of the "ultimate beneficiaries" of its sensor data and that individual citizens should be able to add new organisations to the beneficiary list. In addition, he argues that civil society groups need to start developing their IoT strategy for making use of data and engaging with the public.[151]
+
+Government regulation on IoT
+One of the key drivers of the IoT is data. The success of the idea of connecting devices to make them more efficient is dependent upon access to and storage & processing of data. For this purpose, companies working on the IoT collect data from multiple sources and store it in their cloud network for further processing. This leaves the door wide open for privacy and security dangers and single point vulnerability of multiple systems.[152] The other issues pertain to consumer choice and ownership of data[153] and how it is used. Though still in their infancy, regulations and governance regarding these issues of privacy, security, and data ownership continue to develop.[154][155][156] IoT regulation depends on the country. Some examples of legislation that is relevant to privacy and data collection are: the US Privacy Act of 1974, OECD Guidelines on the Protection of Privacy and Transborder Flows of Personal Data of 1980, and the EU Directive 95/46/EC of 1995.[157]
+
+Current regulatory environment:
+
+A report published by the Federal Trade Commission (FTC) in January 2015 made the following three recommendations:[158]
+
+Data security – At the time of designing IoT companies should ensure that data collection, storage and processing would be secure at all times. Companies should adopt a "defense in depth" approach and encrypt data at each stage.[159]
+Data consent – users should have a choice as to what data they share with IoT companies and the users must be informed if their data gets exposed.
+Data minimisation – IoT companies should collect only the data they need and retain the collected information only for a limited time.
+However, the FTC stopped at just making recommendations for now. According to an FTC analysis, the existing framework, consisting of the FTC Act, the Fair Credit Reporting Act, and the Children's Online Privacy Protection Act, along with developing consumer education and business guidance, participation in multi-stakeholder efforts and advocacy to other agencies at the federal, state and local level, is sufficient to protect consumer rights.[160]
+
+A resolution passed by the Senate in March 2015, is already being considered by the Congress.[161] This resolution recognized the need for formulating a National Policy on IoT and the matter of privacy, security and spectrum. Furthermore, to provide an impetus to the IoT ecosystem, in March 2016, a bipartisan group of four Senators proposed a bill, The Developing Innovation and Growing the Internet of Things (DIGIT) Act, to direct the Federal Communications Commission to assess the need for more spectrum to connect IoT devices.
+
+Approved on 28 September 2018, Senate Bill No. 327[162] goes into effect on 1 January 2020. The bill requires "a manufacturer of a connected device, as those terms are defined, to equip the device with a reasonable security feature or features that are appropriate to the nature and function of the device, appropriate to the information it may collect, contain, or transmit, and designed to protect the device and any information contained therein from unauthorized access, destruction, use, modification, or disclosure,"
+
+Several standards for the IoT industry are actually being established relating to automobiles because most concerns arising from use of connected cars apply to healthcare devices as well. In fact, the National Highway Traffic Safety Administration (NHTSA) is preparing cybersecurity guidelines and a database of best practices to make automotive computer systems more secure.[163]
+
+A recent report from the World Bank examines the challenges and opportunities in government adoption of IoT.[164] These include –
+
+Still early days for the IoT in government 
+Underdeveloped policy and regulatory frameworks 
+Unclear business models, despite strong value proposition 
+Clear institutional and capacity gap in government AND the private sector 
+Inconsistent data valuation and management 
+Infrastructure a major barrier 
+Government as an enabler 
+Most successful pilots share common characteristics (public-private partnership, local, leadership)
+Criticism, problems and controversies
+Platform fragmentation
+The IoT suffers from platform fragmentation, lack of interoperability and common technical standards[165][166][167][168][169][170][171][excessive citations] a situation where the variety of IoT devices, in terms of both hardware variations and differences in the software running on them, makes the task of developing applications that work consistently between different inconsistent technology ecosystems hard.[1] For example, wireless connectivity for IoT devices can be done using Bluetooth, Zigbee, Z-Wave, LoRa, NB-IoT, Cat M1 as well as completely custom proprietary radios – each with its own advantages and disadvantages; and unique support ecosystem.[172]
+
+The IoT's amorphous computing nature is also a problem for security, since patches to bugs found in the core operating system often do not reach users of older and lower-price devices.[173][174][175] One set of researchers say that the failure of vendors to support older devices with patches and updates leaves more than 87% of active Android devices vulnerable.[176][177]
+
+Privacy, autonomy, and control
+Philip N. Howard, a professor and author, writes that the Internet of Things offers immense potential for empowering citizens, making government transparent, and broadening information access. Howard cautions, however, that privacy threats are enormous, as is the potential for social control and political manipulation.[178]
+
+Concerns about privacy have led many to consider the possibility that big data infrastructures such as the Internet of things and data mining are inherently incompatible with privacy.[179] Key challenges of increased digitalization in the water, transport or energy sector are related to privacy and cybersecurity which necessitate an adequate response from research and policymakers alike.[180]
+
+Writer Adam Greenfield claims that IoT technologies are not only an invasion of public space but are also being used to perpetuate normative behavior, citing an instance of billboards with hidden cameras that tracked the demographics of passersby who stopped to read the advertisement.
+
+The Internet of Things Council compared the increased prevalence of digital surveillance due to the Internet of things to the conceptual panopticon described by Jeremy Bentham in the 18th Century.[181] The assertion was defended by the works of French philosophers Michel Foucault and Gilles Deleuze. In Discipline and Punish: The Birth of the Prison Foucault asserts that the panopticon was a central element of the discipline society developed during the Industrial Era.[182] Foucault also argued that the discipline systems established in factories and school reflected Bentham's vision of panopticism.[182] In his 1992 paper "Postscripts on the Societies of Control," Deleuze wrote that the discipline society had transitioned into a control society, with the computer replacing the panopticon as an instrument of discipline and control while still maintaining the qualities similar to that of panopticism.[183]
+
+Peter-Paul Verbeek, a professor of philosophy of technology at the University of Twente, Netherlands, writes that technology already influences our moral decision making, which in turn affects human agency, privacy and autonomy. He cautions against viewing technology merely as a human tool and advocates instead to consider it as an active agent.[184]
+
+Justin Brookman, of the Center for Democracy and Technology, expressed concern regarding the impact of the IoT on consumer privacy, saying that "There are some people in the commercial space who say, 'Oh, big data – well, let's collect everything, keep it around forever, we'll pay for somebody to think about security later.' The question is whether we want to have some sort of policy framework in place to limit that."[185]
+
+Tim O'Reilly believes that the way companies sell the IoT devices on consumers are misplaced, disputing the notion that the IoT is about gaining efficiency from putting all kinds of devices online and postulating that the "IoT is really about human augmentation. The applications are profoundly different when you have sensors and data driving the decision-making."[186]
+
+Editorials at WIRED have also expressed concern, one stating "What you're about to lose is your privacy. Actually, it's worse than that. You aren't just going to lose your privacy, you're going to have to watch the very concept of privacy be rewritten under your nose."[187]
+
+The American Civil Liberties Union (ACLU) expressed concern regarding the ability of IoT to erode people's control over their own lives. The ACLU wrote that "There's simply no way to forecast how these immense powers – disproportionately accumulating in the hands of corporations seeking financial advantage and governments craving ever more control – will be used. Chances are big data and the Internet of things will make it harder for us to control our own lives, as we grow increasingly transparent to powerful corporations and government institutions that are becoming more opaque to us."[188]
+
+In response to rising concerns about privacy and smart technology, in 2007 the British Government stated it would follow formal Privacy by Design principles when implementing their smart metering program. The program would lead to replacement of traditional power meters with smart power meters, which could track and manage energy usage more accurately.[189] However the British Computer Society is doubtful these principles were ever actually implemented.[190] In 2009 the Dutch Parliament rejected a similar smart metering program, basing their decision on privacy concerns. The Dutch program later revised and passed in 2011.[190]
+
+Data storage
+A challenge for producers of IoT applications is to clean, process and interpret the vast amount of data which is gathered by the sensors. There is a solution proposed for the analytics of the information referred to as Wireless Sensor Networks.[191] These networks share data among sensor nodes that are sent to a distributed system for the analytics of the sensory data.[192]
+
+Another challenge is the storage of this bulk data. Depending on the application, there could be high data acquisition requirements, which in turn lead to high storage requirements. Currently the Internet is already responsible for 5% of the total energy generated,[191] and a "daunting challenge to power" IoT devices to collect and even store data still remains.[193]
+
+Security
+Security is the biggest concern in adopting Internet of things technology,[194] with concerns that rapid development is happening without appropriate consideration of the profound security challenges involved[195] and the regulatory changes that might be necessary.[196][197]
+
+Most of the technical security concerns are similar to those of conventional servers, workstations and smartphones.[198] These concerns include using weak authentication, forgetting to change default credentials, unencrypted messages sent between devices, SQL injections, Man-in-the-middle attacks, and poor handling of security updates.[199][200] However, many IoT devices have severe operational limitations on the computational power available to them. These constraints often make them unable to directly use basic security measures such as implementing firewalls or using strong cryptosystems to encrypt their communications with other devices[201] - and the low price and consumer focus of many devices makes a robust security patching system uncommon.[202]
+
+Internet of Things devices also have access to new areas of data, and can often control physical devices,[203] so that even by 2014 it was possible to say that many Internet-connected appliances could already "spy on people in their own homes" including televisions, kitchen appliances,[204] cameras, and thermostats.[205] Computer-controlled devices in automobiles such as brakes, engine, locks, hood and trunk releases, horn, heat, and dashboard have been shown to be vulnerable to attackers who have access to the on-board network. In some cases, vehicle computer systems are Internet-connected, allowing them to be exploited remotely.[206] By 2008 security researchers had shown the ability to remotely control pacemakers without authority. Later hackers demonstrated remote control of insulin pumps[207] and implantable cardioverter defibrillators.[208]
+
+Poorly secured Internet-accessible IoT devices can also be subverted to attack others. In 2016, a distributed denial of service attack powered by Internet of things devices running the Mirai malware took down a DNS provider and major web sites.[209] The Mirai Botnet had infected roughly 65,000 IoT devices within the first 20 hours.[210] Eventually the infections increased to around 200,000 to 300,000 infections.[210] Brazil, Colombia and Vietnam made up of 41.5% of the infections.[210] The Mirai Botnet had singled out specific IoT devices that consisted of DVRs, IP cameras, routers and printers.[210] Top vendors that contained the most infected devices were identified as Dahua, Huawei, ZTE, Cisco, ZyXEL and MikroTik.[210] In May 2017, Junade Ali, a Computer Scientist at Cloudflare noted that native DDoS vulnerabilities exist in IoT devices due to a poor implementation of the Publish–subscribe pattern.[211][212] These sorts of attacks have caused security experts to view IoT as a real threat to Internet services.[213]
+
+The U.S. National Intelligence Council in an unclassified report maintains that it would be hard to deny "access to networks of sensors and remotely-controlled objects by enemies of the United States, criminals, and mischief makers... An open market for aggregated sensor data could serve the interests of commerce and security no less than it helps criminals and spies identify vulnerable targets. Thus, massively parallel sensor fusion may undermine social cohesion, if it proves to be fundamentally incompatible with Fourth-Amendment guarantees against unreasonable search."[214] In general, the intelligence community views the Internet of things as a rich source of data.[215]
+
+On 31 January 2019, the Washington Post wrote an article regarding the security and ethical challenges that can occur with IoT doorbells and cameras: "Last month, Ring got caught allowing its team in Ukraine to view and annotate certain user videos; the company says it only looks at publicly shared videos and those from Ring owners who provide consent. Just last week, a California family’s Nest camera let a hacker take over and broadcast fake audio warnings about a missile attack, not to mention peer in on them, when they used a weak password"[216]
+
+There have been a range of responses to concerns over security. The Internet of Things Security Foundation (IoTSF) was launched on 23 September 2015 with a mission to secure the Internet of things by promoting knowledge and best practice. Its founding board is made from technology providers and telecommunications companies. In addition, large IT companies are continually developing innovative solutions to ensure the security of IoT devices. In 2017, Mozilla launched Project Things, which allows to route IoT devices through a safe Web of Things gateway.[217] As per the estimates from KBV Research,[218] the overall IoT security market[219] would grow at 27.9% rate during 2016–2022 as a result of growing infrastructural concerns and diversified usage of Internet of things.[220][221]
+
+Governmental regulation is argued by some to be necessary to secure IoT devices and the wider Internet – as market incentives to secure IoT devices is insufficient.[222][196][197] It was found that due to the nature of most of the IoT development boards, they generate predictable and weak keys which make it easy to be utilized by Man-in-the-middle attack. However, various hardening approaches were proposed by many researchers to resolve the issue of SSH weak implementation and weak keys.[223]
+
+Safety
+IoT systems are typically controlled by event-driven smart apps that take as input either sensed data, user inputs, or other external triggers (from the Internet) and command one or more actuators towards providing different forms of automation.[224] Examples of sensors include smoke detectors, motion sensors, and contact sensors. Examples of actuators include smart locks, smart power outlets, and door controls. Popular control platforms on which third-party developers can build smart apps that interact wirelessly with these sensors and actuators include Samsung's SmartThings,[225] Apple's HomeKit,[226] and Amazon's Alexa,[227] among others.
+
+A problem specific to IoT systems is that buggy apps, unforeseen bad app interactions, or device/communication failures, can cause unsafe and dangerous physical states, e.g., "unlock the entrance door when no one is at home" or "turn off the heater when the temperature is below 0 degrees Celsius and people are sleeping at night".[224] Detecting flaws that lead to such states, requires a holistic view of installed apps, component devices, their configurations, and more importantly, how they interact. Recently, researchers from the University of California Riverside have proposed IotSan, a novel practical system that uses model checking as a building block to reveal "interaction-level" flaws by identifying events that can lead the system to unsafe states.[224] They have evaluated IotSan on the Samsung SmartThings platform. From 76 manually configured systems, IotSan detects 147 vulnerabilities (i.e., violations of safe physical states/properties).
+
+Design
+Given widespread recognition of the evolving nature of the design and management of the Internet of Things, sustainable and secure deployment of IoT solutions must design for "anarchic scalability."[228] Application of the concept of anarchic scalability can be extended to physical systems (i.e. controlled real-world objects), by virtue of those systems being designed to account for uncertain management futures. This hard anarchic scalability thus provides a pathway forward to fully realize the potential of Internet-of-things solutions by selectively constraining physical systems to allow for all management regimes without risking physical failure.[228]
+
+Brown University computer scientist Michael Littman has argued that successful execution of the Internet of Things requires consideration of the interface's usability as well as the technology itself. These interfaces need to be not only more user-friendly but also better integrated: "If users need to learn different interfaces for their vacuums, their locks, their sprinklers, their lights, and their coffeemakers, it's tough to say that their lives have been made any easier."[229]
+
+Environmental sustainability impact
+A concern regarding Internet-of-things technologies pertains to the environmental impacts of the manufacture, use, and eventual disposal of all these semiconductor-rich devices.[230] Modern electronics are replete with a wide variety of heavy metals and rare-earth metals, as well as highly toxic synthetic chemicals. This makes them extremely difficult to properly recycle. Electronic components are often incinerated or placed in regular landfills. Furthermore, the human and environmental cost of mining the rare-earth metals that are integral to modern electronic components continues to grow. This leads to societal questions concerning the environmental impacts of IoT devices over their lifetime.[231]
+
+Although IoT devices can help in some cases to reduce the energy consumption of certain applications, the impact of having billions of devices connected and consuming power from batteries and from the grid will have a huge impact on energy consumption and CO2 emissions. The technology developed by Omniflow[232] can house all kinds of DC powered IoT devices inside the protective shell that also integrates power generation from integrated vertical wind turbine and solar photovoltaic as well as energy storage using built-in batteries.
+
+Intentional obsolescence of devices
+The Electronic Frontier Foundation has raised concerns that companies can use the technologies necessary to support connected devices to intentionally disable or "brick" their customers' devices via a remote software update or by disabling a service necessary to the operation of the device. In one example, home automation devices sold with the promise of a "Lifetime Subscription" were rendered useless after Nest Labs acquired Revolv and made the decision to shut down the central servers the Revolv devices had used to operate.[233] As Nest is a company owned by Alphabet (Google's parent company), the EFF argues this sets a "terrible precedent for a company with ambitions to sell self-driving cars, medical devices, and other high-end gadgets that may be essential to a person's livelihood or physical safety."[234]
+
+Owners should be free to point their devices to a different server or collaborate on improved software. But such action violates the United States DMCA section 1201, which only has an exemption for "local use". This forces tinkerers who want to keep using their own equipment into a legal grey area. EFF thinks buyers should refuse electronics and software that prioritize the manufacturer's wishes above their own.[234]
+
+Examples of post-sale manipulations include Google Nest Revolv, disabled privacy settings on Android, Sony disabling Linux on PlayStation 3, enforced EULA on Wii U.[234]
+
+Confusing terminology
+Kevin Lonergan at Information Age, a business technology magazine, has referred to the terms surrounding the IoT as a "terminology zoo".[235] The lack of clear terminology is not "useful from a practical point of view" and a "source of confusion for the end user".[235] A company operating in the IoT space could be working in anything related to sensor technology, networking, embedded systems, or analytics.[235] According to Lonergan, the term IoT was coined before smart phones, tablets, and devices as we know them today existed, and there is a long list of terms with varying degrees of overlap and technological convergence: Internet of things, Internet of everything (IoE), Internet of Goods (Supply Chain), industrial Internet, pervasive computing, pervasive sensing, ubiquitous computing, cyber-physical systems (CPS), wireless sensor networks (WSN), smart objects, digital twin, cyberobjects or avatars,[122] cooperating objects, machine to machine (M2M), ambient intelligence (AmI), Operational technology (OT), and information technology (IT).[235] Regarding IIoT, an industrial sub-field of IoT, the Industrial Internet Consortium's Vocabulary Task Group has created a "common and reusable vocabulary of terms"[236] to ensure "consistent terminology"[236][237] across publications issued by the Industrial Internet Consortium. IoT One has created an IoT Terms Database including a New Term Alert[238] to be notified when a new term is published. As of March 2020, this database aggregates 807 IoT-related terms, while keeping material "transparent and comprehensive."[239][240]
+
+IoT adoption barriers
+
+GE Digital CEO William Ruh speaking about GE's attempts to gain a foothold in the market for IoT services at the first IEEE Computer Society TechIgnite conference
+Lack of interoperability and unclear value propositions
+Despite a shared belief in the potential of the IoT, industry leaders and consumers are facing barriers to adopt IoT technology more widely. Mike Farley argued in Forbes that while IoT solutions appeal to early adopters, they either lack interoperability or a clear use case for end-users.[241] A study by Ericsson regarding the adoption of IoT among Danish companies suggests that many struggle "to pinpoint exactly where the value of IoT lies for them".[242]
+
+Privacy and security concerns
+As for IoT, information about a user's daily routine is collected so that the “things” around the user can cooperate to provide better services that fulfill personal preference.[243] When the collected information which describes a user in detail travels through multiple hops in a network, due to a diverse integration of services, devices and network, the information stored on a device is vulnerable to privacy violation by compromising nodes existing in an IoT network.[244]
+
+For example, on 21 October 2016, a multiple distributed denial of service (DDoS) attacks systems operated by domain name system provider Dyn, which caused the inaccessibility of several websites, such as GitHub, Twitter, and others. This attack is executed through a botnet consisting of a large number of IoT devices including IP cameras, gateways, and even baby monitors.[245]
+
+Fundamentally there are 4 security objectives that the IOT system requires:(1)data confidentiality: unauthorized parties cannot have access to the transmitted and stored data.(2)data integrity: intentional and unintentional corruption of transmitted and stored data must be detected.(3)non-repudiation: the sender cannot deny having sent a given message.(4)data availability: the transmitted and stored data should be available to authorized parties even with the denial-of-service (DOS) attacks.[246]
+
+Information privacy regulations also require organizations to practice "reasonable security". California's SB-327 Information privacy: connected devices. "would require a manufacturer of a connected device, as those terms are defined, to equip the device with a reasonable security feature or features that are appropriate to the nature and function of the device, appropriate to the information it may collect, contain, or transmit, and designed to protect the device and any information contained therein from unauthorized access, destruction, use, modification, or disclosure, as specified."[247] As each organization's environment is unique, it can prove challenging to demonstrate what "reasonable security" is and what potential risks could be involved for the business. Oregon's HB 2395 also "Requires person that manufactures, sells or offers to sell connected device] manufacturer to equip connected device with reasonable security features that protect connected device and information that connected device collects, contains, stores or transmits] stores from access, destruction, modification, use or disclosure that consumer does not authorize."[248]
+
+Traditional governance structure
+
+Town of Internet of Things in Hangzhou, China
+A study issued by Ericsson regarding the adoption of Internet of things among Danish companies identified a "clash between IoT and companies' traditional governance structures, as IoT still presents both uncertainties and a lack of historical precedence."[242] Among the respondents interviewed, 60 percent stated that they "do not believe they have the organizational capabilities, and three of four do not believe they have the processes needed, to capture the IoT opportunity."[242] This has led to a need to understand organizational culture in order to facilitate organizational design processes and to test new innovation management practices. A lack of digital leadership in the age of digital transformation has also stifled innovation and IoT adoption to a degree that many companies, in the face of uncertainty, "were waiting for the market dynamics to play out",[242] or further action in regards to IoT "was pending competitor moves, customer pull, or regulatory requirements."[242] Some of these companies risk being 'kodaked' – "Kodak was a market leader until digital disruption eclipsed film photography with digital photos" – failing to "see the disruptive forces affecting their industry"[249] and "to truly embrace the new business models the disruptive change opens up."[249] Scott Anthony has written in Harvard Business Review that Kodak "created a digital camera, invested in the technology, and even understood that photos would be shared online"[249] but ultimately failed to realize that "online photo sharing was the new business, not just a way to expand the printing business."[249]
+
+Business planning and project management
+According to 2018 study, 70–75% of IoT deployments were stuck in the pilot or prototype stage, unable to reach scale due in part to a lack of business planning.[250][page needed][251]
+
+Studies on IoT literature and projects show a disproportionate prominence of technology in the IoT projects, which are often driven by technological interventions rather than business model innovation.[252][253][improper synthesis?]
+
+Even though scientists, engineers, and managers across the world are continuously working to create and exploit the benefits of IoT products, there are some flaws in the governance, management and implementation of such projects. Despite tremendous forward momentum in the field of information and other underlying technologies, IoT still remains a complex area and the problem of how IoT projects are managed still needs to be addressed. IoT projects must be run differently than simple and traditional IT, manufacturing or construction projects. Because IoT projects have longer project timelines, a lack of skilled resources and several security/legal issues, there is a need for new and specifically designed project processes. The following management techniques should improve the success rate of IoT projects:[254]
+
+A separate research and development phase 
+A Proof-of-Concept/Prototype before the actual project begins 
+Project managers with interdisciplinary technical knowledge 
+Universally defined business and technical jargon
+
+
+
+
