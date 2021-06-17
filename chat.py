@@ -131,6 +131,7 @@ def srch(search):
         if "google search" in search:
             search = search.replace("google search","\b")
             return kit.search(search)
+      return None
 
 import randfacts
 FACTS_INPUT=("tell me some facts", "facts", "can you tell me some facts?", "tell me facts")
@@ -190,23 +191,7 @@ def newsTrending(news_now):
                 
 
 
-# In[12]:
 
-
-'''
-import emoji
-import demoji
-EMOJI_INPUTS = (":smiling_face_with_smiling_eyes:", ":grinning_face:", ":grinning_face_with_big_eyes:", ":beaming_face_with_smiling_eyes:", ":smiling_face_with_smiling_eyes:","I am happy", "happy")
-EMOJI_RESPONSES = ["\U0001F600", "\U0001F603", "\U0001F604", "\U0001F601", "Someone's having a great day \U0001F600", "What a sweetie","\U0001F60A"]
-
-def happy(happy_emoji):
- 
-    for word in happy_emoji.split():
-        if "happy" in EMOJI_INPUTS:
-            return random.choice(EMOJI_RESPONSES)
-        if emoji.demojize(happy_emoji) in EMOJI_INPUTS:
-            return random.choice(EMOJI_RESPONSES) 
-'''
 
 # In[13]:
 
